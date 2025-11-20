@@ -16,27 +16,24 @@
       }
 
       :root {
-        --jungle-cream: #f5f7f2;
-        --jungle-light: #e8f0e6;
-        --jungle-mint: #d4e8d8;
-        --jungle-sage: #b8d4c1;
-        --jungle-green: #8fb99f;
-        --jungle-deep: #6b9b7a;
-        --jungle-dark: #4a7a5a;
-        --accent-warm: #f0e8d4;
-        --wood-brown: #c4b8a8;
-        --text-dark: #1a2e1f;
-        --text-medium: #3d5a47;
-        --shadow-soft: rgba(74, 122, 90, 0.08);
-        --shadow-medium: rgba(74, 122, 90, 0.15);
+        --beige: #f5f1e8;
+        --sand: #e8e0d4;
+        --light-green: #e0ead8;
+        --sage: #c4d4c0;
+        --text-dark: #2c2c2c;
+        --text-medium: #5a5a5a;
+        --accent: #8b9a7f;
+        --accent-dark: #6b7a5f;
+        --shadow-soft: rgba(0, 0, 0, 0.06);
+        --shadow-medium: rgba(0, 0, 0, 0.12);
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-          "Helvetica Neue", Arial, sans-serif;
-        background: var(--jungle-cream);
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Inter", "San Francisco", Arial, sans-serif;
+        background: var(--beige);
         color: var(--text-dark);
-        line-height: 1.6;
+        line-height: 1.7;
         -webkit-font-smoothing: antialiased;
       }
 
@@ -49,13 +46,13 @@
       .header {
         background: linear-gradient(
           135deg,
-          var(--jungle-mint) 0%,
-          var(--jungle-light) 40%,
-          var(--jungle-sage) 100%
+          var(--light-green) 0%,
+          var(--beige) 50%,
+          var(--sand) 100%
         );
-        padding: 40px 20px;
+        padding: 60px 20px;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
       }
 
       .header h1 {
@@ -67,35 +64,38 @@
 
       .back-link {
         display: inline-block;
-        margin-top: 20px;
-        padding: 12px 24px;
-        background: var(--jungle-deep);
+        margin-top: 24px;
+        padding: 14px 28px;
+        background: var(--accent);
         color: white;
         text-decoration: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-weight: 500;
+        font-size: 1rem;
         transition: all 0.3s ease;
+        box-shadow: 0 4px 12px var(--shadow-soft);
       }
 
       .back-link:hover {
-        background: var(--jungle-dark);
+        background: var(--accent-dark);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px var(--shadow-medium);
+        box-shadow: 0 6px 20px var(--shadow-medium);
       }
 
       .content {
         background: white;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px var(--shadow-soft);
+        padding: 50px 45px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px var(--shadow-soft);
       }
 
       .content h2 {
-        font-size: 1.5rem;
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
         font-weight: 600;
-        color: var(--jungle-deep);
-        margin-top: 30px;
-        margin-bottom: 15px;
+        color: var(--text-dark);
+        margin-top: 40px;
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
       }
 
       .content h2:first-child {
@@ -103,10 +103,10 @@
       }
 
       .content h3 {
-        font-size: 1.2rem;
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
         font-weight: 600;
         color: var(--text-dark);
-        margin-top: 25px;
+        margin-top: 28px;
         margin-bottom: 12px;
       }
 
@@ -120,11 +120,13 @@
       }
 
       .content a {
-        color: var(--jungle-deep);
+        color: var(--accent);
         text-decoration: none;
+        transition: color 0.3s ease;
       }
 
       .content a:hover {
+        color: var(--accent-dark);
         text-decoration: underline;
       }
 
@@ -139,22 +141,36 @@
       }
 
       footer {
-        background: var(--jungle-dark);
-        color: white;
-        padding: 30px 20px;
+        background: var(--text-dark);
+        color: rgba(255, 255, 255, 0.85);
+        padding: 60px 20px 40px;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 80px;
+      }
+
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .footer-content p {
+        margin-bottom: 20px;
+        font-size: 0.95rem;
       }
 
       .footer-links {
-        margin-top: 15px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
       }
 
       .footer-links a {
         color: rgba(255, 255, 255, 0.9);
         text-decoration: none;
-        margin: 0 15px;
         transition: color 0.3s ease;
+        font-size: 0.95rem;
       }
 
       .footer-links a:hover {
@@ -164,90 +180,110 @@
 
       @media (max-width: 768px) {
         .container {
-          padding: 30px 15px;
+          padding: 40px 15px;
         }
 
         .header {
-          padding: 30px 15px;
-          margin-bottom: 30px;
+          padding: 50px 15px;
+          margin-bottom: 40px;
         }
 
         .header h1 {
-          font-size: clamp(1.5rem, 5vw, 2rem);
+          font-size: clamp(1.8rem, 5vw, 2.2rem);
         }
 
         .back-link {
-          padding: 10px 20px;
+          padding: 12px 24px;
           font-size: 0.95rem;
-          margin-top: 15px;
+          margin-top: 20px;
         }
 
         .content {
-          padding: 30px 20px;
+          padding: 35px 25px;
         }
 
         .content h2 {
-          font-size: 1.3rem;
-          margin-top: 25px;
-          margin-bottom: 12px;
+          font-size: clamp(1.3rem, 4vw, 1.6rem);
+          margin-top: 32px;
+          margin-bottom: 16px;
         }
 
         .content h3 {
-          font-size: 1.1rem;
-          margin-top: 20px;
-          margin-bottom: 10px;
+          font-size: clamp(1.1rem, 3vw, 1.25rem);
+          margin-top: 24px;
+          margin-bottom: 12px;
         }
 
         .content p {
           font-size: 0.95rem;
-          margin-bottom: 12px;
+          margin-bottom: 14px;
+          line-height: 1.7;
         }
 
         .content ul {
-          margin-left: 15px;
+          margin-left: 18px;
+          margin-bottom: 14px;
         }
 
         .content li {
           font-size: 0.95rem;
-          margin-bottom: 8px;
+          margin-bottom: 10px;
+          line-height: 1.6;
         }
 
         footer {
-          padding: 25px 15px;
-          margin-top: 40px;
+          padding: 50px 15px 35px;
+          margin-top: 60px;
         }
 
         .footer-links {
-          display: flex;
           flex-direction: column;
-          gap: 10px;
-          margin-top: 15px;
-        }
-
-        .footer-links a {
-          margin: 0;
+          gap: 15px;
         }
       }
 
       @media (max-width: 480px) {
         .container {
-          padding: 20px 10px;
+          padding: 30px 10px;
         }
 
         .header {
-          padding: 25px 10px;
+          padding: 40px 10px;
+          margin-bottom: 30px;
+        }
+
+        .header h1 {
+          font-size: clamp(1.6rem, 6vw, 2rem);
+        }
+
+        .back-link {
+          padding: 12px 20px;
+          font-size: 0.9rem;
         }
 
         .content {
-          padding: 25px 15px;
+          padding: 28px 20px;
         }
 
         .content h2 {
-          font-size: 1.2rem;
+          font-size: clamp(1.2rem, 5vw, 1.4rem);
+          margin-top: 28px;
         }
 
         .content h3 {
-          font-size: 1rem;
+          font-size: clamp(1rem, 4vw, 1.15rem);
+        }
+
+        .content p {
+          font-size: 0.9rem;
+        }
+
+        .content li {
+          font-size: 0.9rem;
+        }
+
+        footer {
+          padding: 40px 15px 30px;
         }
       }
     </style>
@@ -369,8 +405,8 @@
         </p>
         <p>
           <strong>Laser Jungle</strong><br />
-          Kevin Reuss & Charlotte J.<br />
-          Lengenfeld<br />
+          Kevin Reuß<br />
+          08485 Lengenfeld<br />
           Deutschland
         </p>
         <p>
@@ -646,14 +682,13 @@
     </div>
 
     <footer>
-      <div>
-        <p><strong>Laser Jungle</strong></p>
+      <div class="footer-content">
         <div class="footer-links">
           <a href="index.html">Startseite</a>
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
         </div>
-        <p style="margin-top: 20px; font-size: 0.9rem">
+        <p style="margin-top: 30px; font-size: 0.9rem">
           &copy; 2025 Laser Jungle
         </p>
       </div>

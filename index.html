@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Persönliche, gelaserte Karten für Firmenkunden. Handgemacht aus Holz, individuell gestaltet mit Logo des Empfängers."
+      content="Individuell gelaserte Karten für Kunden, Partner & Investoren. Persönlich, hochwertig, mit Logo oder Botschaft – für besondere Geschäftsanlässe."
     />
-    <title>Laser Jungle – Persönliche Karten</title>
+    <title>Laser Jungle – Individuell gelaserte Karten für B2B</title>
     <style>
       * {
         margin: 0;
@@ -16,65 +16,58 @@
       }
 
       :root {
-        --jungle-cream: #f5f7f2;
-        --jungle-light: #e8f0e6;
-        --jungle-mint: #d4e8d8;
-        --jungle-sage: #b8d4c1;
-        --jungle-green: #8fb99f;
-        --jungle-deep: #6b9b7a;
-        --jungle-dark: #4a7a5a;
-        --accent-warm: #f0e8d4;
-        --wood-brown: #c4b8a8;
-        --text-dark: #1a2e1f;
-        --text-medium: #3d5a47;
-        --shadow-soft: rgba(74, 122, 90, 0.08);
-        --shadow-medium: rgba(74, 122, 90, 0.15);
+        --beige: #f5f1e8;
+        --sand: #e8e0d4;
+        --light-green: #e0ead8;
+        --sage: #c4d4c0;
+        --text-dark: #2c2c2c;
+        --text-medium: #5a5a5a;
+        --accent: #8b9a7f;
+        --accent-dark: #6b7a5f;
+        --shadow-soft: rgba(0, 0, 0, 0.06);
+        --shadow-medium: rgba(0, 0, 0, 0.12);
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-          "Helvetica Neue", Arial, sans-serif;
-        background: var(--jungle-cream);
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Inter", "San Francisco", Arial, sans-serif;
+        background: var(--beige);
         color: var(--text-dark);
-        line-height: 1.6;
+        line-height: 1.7;
         -webkit-font-smoothing: antialiased;
       }
 
       /* Hero Section */
       .hero {
         position: relative;
-        min-height: 70vh;
+        min-height: 85vh;
         display: flex;
         align-items: center;
         justify-content: center;
         background: linear-gradient(
           135deg,
-          var(--jungle-mint) 0%,
-          var(--jungle-light) 40%,
-          var(--jungle-sage) 100%
+          var(--light-green) 0%,
+          var(--beige) 50%,
+          var(--sand) 100%
         );
-        padding: 80px 20px;
+        padding: 100px 20px 80px;
         text-align: center;
       }
 
       .hero-content {
-        max-width: 900px;
+        max-width: 1000px;
         z-index: 1;
       }
 
       .hero-image {
         width: 100%;
-        max-width: 600px;
-        height: 400px;
+        max-width: 700px;
+        height: 450px;
         object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 0 20px 40px var(--shadow-medium);
-        margin-bottom: 40px;
-        background: linear-gradient(
-          135deg,
-          var(--jungle-green),
-          var(--jungle-mint)
-        );
+        border-radius: 16px;
+        box-shadow: 0 24px 48px var(--shadow-medium);
+        margin: 0 auto 50px;
+        background: linear-gradient(135deg, var(--sage), var(--light-green));
         display: flex;
         align-items: center;
         justify-content: center;
@@ -83,274 +76,257 @@
       }
 
       .hero h1 {
-        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-size: clamp(2.2rem, 5.5vw, 3.5rem);
         font-weight: 600;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         color: var(--text-dark);
         letter-spacing: -0.02em;
+        line-height: 1.2;
       }
 
       .hero .subtitle {
-        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        font-size: clamp(1.15rem, 2.8vw, 1.5rem);
         color: var(--text-medium);
-        margin-bottom: 40px;
-        max-width: 700px;
+        margin-bottom: 48px;
+        max-width: 750px;
         margin-left: auto;
         margin-right: auto;
+        font-weight: 400;
       }
 
       .cta-button {
         display: inline-block;
-        padding: 16px 32px;
-        background: var(--jungle-deep);
+        padding: 18px 40px;
+        background: var(--accent);
         color: white;
         text-decoration: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-weight: 500;
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px var(--shadow-soft);
+        box-shadow: 0 6px 20px var(--shadow-soft);
+        border: none;
+        cursor: pointer;
       }
 
       .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--shadow-medium);
-        background: var(--jungle-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px var(--shadow-medium);
+        background: var(--accent-dark);
       }
 
       /* Section Styling */
       section {
-        padding: 80px 20px;
+        padding: 100px 20px;
         max-width: 1200px;
         margin: 0 auto;
       }
 
       .section-title {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-size: clamp(1.9rem, 4.5vw, 2.8rem);
         font-weight: 600;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         text-align: center;
         color: var(--text-dark);
         letter-spacing: -0.01em;
       }
 
-      .section-intro {
+      /* Trust Section */
+      .trust-section {
+        background: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .trust-text {
+        font-size: 1rem;
+        color: var(--text-medium);
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+      }
+
+      .trust-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .trust-logo {
         font-size: 1.2rem;
         color: var(--text-medium);
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto 60px;
-        line-height: 1.8;
+        opacity: 0.6;
+        font-weight: 500;
+        filter: grayscale(100%);
       }
 
-      /* USP Section */
-      .usp-grid {
+      /* Gallery Section */
+      .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
       }
 
-      .usp-box {
+      .gallery-item {
         background: white;
-        padding: 40px 30px;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 4px 16px var(--shadow-soft);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .usp-box:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px var(--shadow-medium);
-      }
-
-      .usp-icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-      }
-
-      .usp-box h3 {
-        font-size: 1.3rem;
-        margin-bottom: 12px;
-        color: var(--text-dark);
-      }
-
-      .usp-box p {
-        color: var(--text-medium);
-        line-height: 1.6;
-      }
-
-      /* Showroom Section */
-      .showroom-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-      }
-
-      .showroom-card {
-        background: white;
-        border-radius: 12px;
+        border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 4px 16px var(--shadow-soft);
+        box-shadow: 0 6px 24px var(--shadow-soft);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .showroom-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px var(--shadow-medium);
+      .gallery-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 36px var(--shadow-medium);
       }
 
-      .showroom-image {
+      .gallery-image {
         width: 100%;
-        height: 250px;
+        height: 280px;
         object-fit: cover;
-        background: linear-gradient(
-          135deg,
-          var(--jungle-green),
-          var(--jungle-mint)
-        );
+        background: linear-gradient(135deg, var(--sage), var(--light-green));
         display: flex;
         align-items: center;
         justify-content: center;
         color: var(--text-medium);
-      }
-
-      .showroom-content {
-        padding: 24px;
-      }
-
-      .showroom-content h3 {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-        color: var(--text-dark);
-      }
-
-      .showroom-content p {
-        color: var(--text-medium);
         font-size: 0.95rem;
       }
 
-      /* Process Section */
-      .process-steps {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        margin: 50px 0;
+      .gallery-content {
+        padding: 28px;
       }
 
-      .process-step {
-        text-align: center;
-        padding: 30px 20px;
-      }
-
-      .step-number {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        background: var(--jungle-deep);
-        color: white;
-        border-radius: 50%;
-        line-height: 50px;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 20px;
-      }
-
-      .process-step h3 {
+      .gallery-content h3 {
         font-size: 1.3rem;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
         color: var(--text-dark);
+        font-weight: 500;
       }
 
-      .process-step p {
+      .gallery-content p {
         color: var(--text-medium);
+        font-size: 1rem;
         line-height: 1.6;
       }
 
-      .pricing-box {
+      /* Pricing Section */
+      .pricing-section {
         background: white;
-        padding: 40px;
-        border-radius: 12px;
+      }
+
+      .pricing-subtitle {
         text-align: center;
-        margin-top: 40px;
-        box-shadow: 0 4px 16px var(--shadow-soft);
+        color: var(--text-medium);
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .pricing-box .price {
-        font-size: 2.5rem;
-        font-weight: 600;
+      .pricing-table {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 24px var(--shadow-soft);
+      }
+
+      .pricing-table thead {
+        background: var(--sage);
         color: var(--text-dark);
-        margin-bottom: 10px;
       }
 
-      .pricing-box .price-note {
-        color: var(--text-medium);
-        margin-bottom: 20px;
-      }
-
-      .pricing-features {
-        list-style: none;
+      .pricing-table th {
+        padding: 20px;
         text-align: left;
-        max-width: 500px;
-        margin: 30px auto 0;
+        font-weight: 600;
+        font-size: 1.1rem;
       }
 
-      .pricing-features li {
-        padding: 10px 0;
-        color: var(--text-medium);
-        border-bottom: 1px solid var(--jungle-mint);
+      .pricing-table th:first-child {
+        width: 40%;
       }
 
-      .pricing-features li:last-child {
+      .pricing-table th:not(:first-child) {
+        text-align: center;
+        width: 30%;
+      }
+
+      .pricing-table td {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--sand);
+        color: var(--text-dark);
+      }
+
+      .pricing-table td:not(:first-child) {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+
+      .pricing-table tbody tr:last-child td {
         border-bottom: none;
       }
 
-      .pricing-features li::before {
-        content: "✓ ";
-        color: #4a9b4a;
-        font-weight: bold;
-        margin-right: 8px;
+      .pricing-table tbody tr:hover {
+        background: var(--beige);
       }
 
-      /* Contact Form */
-      .contact-form {
+      /* Request/Configurator Section */
+      .request-section {
+        background: var(--light-green);
+      }
+
+      .request-form {
         background: white;
         padding: 50px 40px;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px var(--shadow-soft);
-        max-width: 700px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px var(--shadow-soft);
+        max-width: 800px;
         margin: 0 auto;
       }
 
       .form-group {
-        margin-bottom: 24px;
+        margin-bottom: 28px;
       }
 
       .form-group label {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         font-weight: 500;
         color: var(--text-dark);
+        font-size: 1rem;
       }
 
       .form-group input,
+      .form-group select,
       .form-group textarea {
         width: 100%;
-        padding: 12px 16px;
-        border: 2px solid var(--jungle-mint);
-        border-radius: 8px;
+        padding: 14px 18px;
+        border: 2px solid var(--sand);
+        border-radius: 10px;
         font-size: 1rem;
         font-family: inherit;
-        transition: border-color 0.3s ease;
-        background: var(--jungle-cream);
+        transition: all 0.3s ease;
+        background: var(--beige);
+        color: var(--text-dark);
       }
 
       .form-group input:focus,
+      .form-group select:focus,
       .form-group textarea:focus {
         outline: none;
-        border-color: var(--text-dark);
+        border-color: var(--accent);
         background: white;
       }
 
@@ -359,97 +335,128 @@
         min-height: 120px;
       }
 
-      .file-upload {
-        padding: 12px;
-        border: 2px dashed var(--jungle-mint);
-        border-radius: 8px;
-        text-align: center;
-        color: var(--text-medium);
+      .design-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 15px;
+      }
+
+      .design-option {
+        position: relative;
         cursor: pointer;
+        border: 3px solid var(--sand);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: var(--beige);
+      }
+
+      .design-option:hover {
+        border-color: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px var(--shadow-soft);
+      }
+
+      .design-option input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .design-option input[type="radio"]:checked + .design-option-content {
+        border-color: var(--accent);
+        background: var(--light-green);
+      }
+
+      .design-option-content {
+        padding: 20px;
+        text-align: center;
         transition: all 0.3s ease;
       }
 
-      .file-upload:hover {
-        border-color: var(--jungle-deep);
-        background: var(--jungle-light);
+      .design-option-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, var(--sage), var(--light-green));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-medium);
+        font-size: 2.5rem;
       }
 
-      .file-upload input[type="file"] {
-        display: none;
+      .design-option-label {
+        font-weight: 500;
+        color: var(--text-dark);
+        font-size: 1rem;
+      }
+
+      .price-preview {
+        background: var(--sage);
+        padding: 24px;
+        border-radius: 12px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .price-preview-label {
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+      }
+
+      .price-preview-value {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .price-preview-details {
+        font-size: 0.9rem;
+        color: var(--text-medium);
+        margin-top: 8px;
       }
 
       .submit-button {
         width: 100%;
-        padding: 16px;
-        background: var(--jungle-deep);
+        padding: 18px;
+        background: var(--accent);
         color: white;
         border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
+        border-radius: 10px;
+        font-size: 1.15rem;
         font-weight: 500;
         cursor: pointer;
         transition: all 0.3s ease;
-        margin-top: 10px;
+        margin-top: 30px;
+        box-shadow: 0 4px 16px var(--shadow-soft);
       }
 
       .submit-button:hover {
-        background: var(--jungle-dark);
+        background: var(--accent-dark);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px var(--shadow-medium);
+        box-shadow: 0 6px 24px var(--shadow-medium);
       }
 
-      .contact-alternative {
-        text-align: center;
-        margin-top: 30px;
-        color: var(--text-medium);
-      }
-
-      .contact-alternative a {
-        color: var(--text-dark);
-        text-decoration: underline;
-        font-weight: 500;
-      }
-
-      /* Etsy Section */
-      .etsy-section {
-        background: linear-gradient(
-          135deg,
-          var(--jungle-light),
-          var(--jungle-mint)
-        );
-        padding: 60px 20px;
-        text-align: center;
-        margin: 60px 0;
-      }
-
-      .etsy-section p {
-        font-size: 1.2rem;
-        color: var(--text-medium);
-        margin-bottom: 20px;
-      }
-
-      .etsy-button {
-        display: inline-block;
-        padding: 14px 28px;
-        background: white;
-        color: var(--text-dark);
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px var(--shadow-soft);
-      }
-
-      .etsy-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--shadow-medium);
+      .submit-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
       }
 
       /* Footer */
       footer {
-        background: var(--jungle-dark);
-        color: white;
-        padding: 50px 20px 30px;
+        background: var(--text-dark);
+        color: rgba(255, 255, 255, 0.85);
+        padding: 60px 20px 40px;
         text-align: center;
       }
 
@@ -459,19 +466,23 @@
       }
 
       .footer-content p {
-        margin-bottom: 12px;
-        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 20px;
+        font-size: 0.95rem;
       }
 
       .footer-links {
-        margin-top: 20px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
       }
 
       .footer-links a {
         color: rgba(255, 255, 255, 0.9);
         text-decoration: none;
-        margin: 0 15px;
         transition: color 0.3s ease;
+        font-size: 0.95rem;
       }
 
       .footer-links a:hover {
@@ -482,8 +493,55 @@
       /* Responsive */
       @media (max-width: 768px) {
         .hero {
+          min-height: 70vh;
+          padding: 60px 15px 50px;
+        }
+
+        .hero-image {
+          height: 300px;
+          margin-bottom: 40px;
+        }
+
+        section {
+          padding: 70px 15px;
+        }
+
+        .trust-logos {
+          gap: 40px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          margin-top: 40px;
+        }
+
+        .pricing-table {
+          font-size: 0.9rem;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+          padding: 14px 12px;
+        }
+
+        .request-form {
+          padding: 35px 25px;
+        }
+
+        .design-options {
+          grid-template-columns: 1fr;
+        }
+
+        .price-preview-value {
+          font-size: 1.6rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
           min-height: 60vh;
-          padding: 40px 15px;
+          padding: 40px 10px 30px;
         }
 
         .hero-image {
@@ -491,179 +549,26 @@
           margin-bottom: 30px;
         }
 
-        .hero h1 {
-          font-size: clamp(1.8rem, 6vw, 2.5rem);
-          margin-bottom: 15px;
-        }
-
-        .hero .subtitle {
-          font-size: clamp(1rem, 3vw, 1.2rem);
-          margin-bottom: 30px;
-        }
-
-        .cta-button {
-          padding: 14px 28px;
-          font-size: 1rem;
-        }
-
         section {
-          padding: 50px 15px;
+          padding: 50px 10px;
         }
 
-        .section-title {
-          font-size: clamp(1.5rem, 5vw, 2rem);
-          margin-bottom: 15px;
+        .pricing-table {
+          font-size: 0.85rem;
         }
 
-        .section-intro {
-          font-size: 1.1rem;
-          margin-bottom: 40px;
-          padding: 0 10px;
+        .pricing-table th,
+        .pricing-table td {
+          padding: 12px 8px;
         }
 
-        .usp-grid,
-        .showroom-grid,
-        .process-steps {
-          grid-template-columns: 1fr;
-          gap: 20px;
-          margin-top: 30px;
-        }
-
-        .usp-box {
+        .request-form {
           padding: 30px 20px;
-        }
-
-        .usp-icon {
-          font-size: 2.5rem;
-          margin-bottom: 15px;
-        }
-
-        .usp-box h3 {
-          font-size: 1.2rem;
-        }
-
-        .showroom-card {
-          margin-bottom: 0;
-        }
-
-        .showroom-image {
-          height: 200px;
-        }
-
-        .showroom-content {
-          padding: 20px;
-        }
-
-        .process-step {
-          padding: 25px 15px;
-        }
-
-        .step-number {
-          width: 45px;
-          height: 45px;
-          line-height: 45px;
-          font-size: 1.3rem;
-          margin-bottom: 15px;
-        }
-
-        .process-step h3 {
-          font-size: 1.2rem;
-        }
-
-        .pricing-box {
-          padding: 30px 20px;
-          margin-top: 30px;
-        }
-
-        .pricing-box .price {
-          font-size: 2rem;
-        }
-
-        .pricing-features {
-          margin-top: 20px;
-        }
-
-        .contact-form {
-          padding: 30px 20px;
-          margin: 0 10px;
-        }
-
-        .form-group {
-          margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-          padding: 10px 14px;
-          font-size: 16px; /* Verhindert Zoom auf iOS */
-        }
-
-        .submit-button {
-          padding: 14px;
-          font-size: 1rem;
-        }
-
-        .etsy-section {
-          padding: 40px 15px;
-          margin: 40px 0;
-        }
-
-        .etsy-section p {
-          font-size: 1.1rem;
-          margin-bottom: 15px;
-        }
-
-        .etsy-button {
-          padding: 12px 24px;
-          font-size: 1rem;
-        }
-
-        footer {
-          padding: 40px 15px 25px;
         }
 
         .footer-links {
-          display: flex;
           flex-direction: column;
-          gap: 10px;
-          margin-top: 20px;
-        }
-
-        .footer-links a {
-          margin: 0;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero {
-          min-height: 50vh;
-          padding: 30px 10px;
-        }
-
-        .hero-image {
-          height: 200px;
-          margin-bottom: 20px;
-        }
-
-        section {
-          padding: 40px 10px;
-        }
-
-        .section-intro {
-          font-size: 1rem;
-        }
-
-        .contact-form {
-          padding: 25px 15px;
-          margin: 0 5px;
-        }
-
-        .pricing-box {
-          padding: 25px 15px;
-        }
-
-        .pricing-box .price {
-          font-size: 1.8rem;
+          gap: 15px;
         }
       }
 
@@ -677,190 +582,225 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
+        <!-- TODO: Bildpfad für Hero-Bild ersetzen -->
         <div class="hero-image">
-          [Hochwertiges Foto einer personalisierten Karte mit Logo-Gravur]
+          [Hochwertiges Foto einer gelaserten Karte mit Empfängerlogo]
         </div>
-        <h1>Persönliche Karten für Ihre Kunden, Partner und Angestellten</h1>
+        <h1>Individuell gelaserte Karten für Kunden, Partner & Investoren</h1>
         <p class="subtitle">
-          Gravierte Holz-Karten mit eigenem Design – persönlich, hochwertig,
-          unvergesslich.
+          Persönlich, hochwertig, mit Logo oder Botschaft – für besondere
+          Geschäftsanlässe
         </p>
-        <p class="subtitle" style="font-size: 1.1rem; margin-top: -20px">
-          Handgemacht aus Holz, individuell gestaltet. Kein generisches
-          Werbegeschenk – echte Wertschätzung.
-        </p>
-        <a href="#kontakt" class="cta-button">Muster anfordern</a>
+        <a href="#anfrage" class="cta-button">Jetzt Anfrage stellen</a>
       </div>
     </section>
 
-    <!-- USP Section -->
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <p class="trust-text">Vertrauen bereits u. a.</p>
+      <div class="trust-logos">
+        <div class="trust-logo">Prequel Ventures</div>
+        <div class="trust-logo">Dr. Matzat</div>
+        <div class="trust-logo">Reuss Digital</div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
     <section>
-      <h2 class="section-title">Was wir anbieten</h2>
-      <p class="section-intro">
-        Wir stellen hochwertige Karten aus Holz her – gelasert, gestaltet und
-        versendet aus Deutschland. Für Weihnachten, Projektabschlüsse, neue
-        Partnerschaften oder einfach ein echtes Dankeschön.
-      </p>
-      <div class="usp-grid">
-        <div class="usp-box">
-          <div class="usp-icon">🎯</div>
-          <h3>Logo des Empfängers im Fokus</h3>
-          <p>
-            Die Karte wird zum persönlichen Geschenk – das Logo des Empfängers
-            steht im Mittelpunkt, nicht Ihre Marke.
-          </p>
-        </div>
-        <div class="usp-box">
-          <div class="usp-icon">⚡</div>
-          <h3>Handgemacht mit Lasertechnik</h3>
-          <p>
-            Präzise Gravuren auf hochwertigem Holz oder Acryl. Jede Karte wird
-            individuell gefertigt und versendet.
-          </p>
-        </div>
-        <div class="usp-box">
-          <div class="usp-icon">📦</div>
-          <h3>Schon ab 10 Stück bestellbar</h3>
-          <p>
-            Keine Mindestmengen im dreistelligen Bereich. Ab 10 Karten können
-            Sie Ihre personalisierte Serie bestellen.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Showroom Section -->
-    <section style="background: var(--jungle-light); border-radius: 0">
-      <h2 class="section-title">Beispielkarten</h2>
-      <p class="section-intro" style="margin-bottom: 30px">
-        Konkrete Projekte, die Vertrauen schaffen und Inspiration bieten.
-      </p>
-      <div class="showroom-grid">
-        <div class="showroom-card">
-          <div class="showroom-image">
-            [Foto: Kunde 1 Karte mit Investor-Logo]
-          </div>
-          <div class="showroom-content">
-            <h3>Kunde 1</h3>
-            <p>Investorenkarte mit persönlichem Dank und Logo-Gravur</p>
-          </div>
-        </div>
-        <div class="showroom-card">
-          <div class="showroom-image">
-            [Foto: Kunde 1 Karte an Praxispartner]
-          </div>
-          <div class="showroom-content">
-            <h3>Kunde 1</h3>
+      <h2 class="section-title">Galerie</h2>
+      <div class="gallery-grid">
+        <!-- TODO: Bildpfad für Weihnachtskarte ersetzen -->
+        <div class="gallery-item">
+          <div class="gallery-image">[Weihnachtskarte für Investoren]</div>
+          <div class="gallery-content">
+            <h3>Weihnachtskarte für Investoren mit Gravur</h3>
             <p>
-              Persönliche Danksagungskarte mit graviertem Logo für treue
+              Persönliche Weihnachtsgrüße mit graviertem Logo für wichtige
               Geschäftspartner
             </p>
           </div>
         </div>
-        <div class="showroom-card">
-          <div class="showroom-image">
-            [Platzhalter für zukünftige Referenzkarte]
+        <!-- TODO: Bildpfad für Business-Karte ersetzen -->
+        <div class="gallery-item">
+          <div class="gallery-image">[Business-Karte zum Projektabschluss]</div>
+          <div class="gallery-content">
+            <h3>Business-Karte zum Projektabschluss</h3>
+            <p>
+              Danksagungskarte mit individuellem Design für erfolgreiche
+              Projektabschlüsse
+            </p>
           </div>
-          <div class="showroom-content">
-            <h3>Ihr Projekt</h3>
-            <p>Werden Sie Teil unserer Referenzen</p>
+        </div>
+        <!-- TODO: Bildpfad für Minimalistische Blanko-Edition ersetzen -->
+        <div class="gallery-item">
+          <div class="gallery-image">[Minimalistische Blanko-Edition]</div>
+          <div class="gallery-content">
+            <h3>Minimalistische Blanko-Edition</h3>
+            <p>
+              Zeitloses Design für vielfältige Anlässe – elegant und vielseitig
+            </p>
+          </div>
+        </div>
+        <!-- TODO: Weitere Galeriebilder hinzufügen -->
+        <div class="gallery-item">
+          <div class="gallery-image">[Weitere Beispielkarte]</div>
+          <div class="gallery-content">
+            <h3>Individuelles Design</h3>
+            <p>Jede Karte wird nach Ihren Wünschen gestaltet und produziert</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">[Weitere Beispielkarte]</div>
+          <div class="gallery-content">
+            <h3>Hochwertige Materialien</h3>
+            <p>
+              Premium-Holz oder Acryl für einen nachhaltigen, wertigen Eindruck
+            </p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">[Weitere Beispielkarte]</div>
+          <div class="gallery-content">
+            <h3>Präzise Gravur</h3>
+            <p>
+              Lasertechnik für detailreiche, dauerhafte Gravuren in höchster
+              Qualität
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing & Process Section -->
-    <section>
-      <h2 class="section-title">So einfach funktioniert's</h2>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h3>Kontakt aufnehmen</h3>
-          <p>Musterkarte anfordern oder direkt Ihr Projekt beschreiben</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h3>Entwurf & Freigabe</h3>
-          <p>
-            Wir erstellen den Entwurf mit Logo und Gravur – Sie geben Feedback
-          </p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h3>Produktion & Versand</h3>
-          <p>
-            Innerhalb von 5–7 Werktagen erhalten Sie Ihre personalisierten
-            Karten
-          </p>
-        </div>
-      </div>
-      <div class="pricing-box">
-        <div class="price">ab 7,90 €</div>
-        <div class="price-note">pro Stück (ab 10 Karten)</div>
-        <ul class="pricing-features">
-          <li>Individuelle Gravur, Logo & Wunschtext inklusive</li>
-          <li>Hochwertige Materialien (Holz oder Acryl)</li>
-          <li>Auf Wunsch: QR-Codes, Verpackung oder Extras</li>
-          <li>Versand aus Deutschland</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="kontakt" style="background: var(--jungle-cream)">
-      <h2 class="section-title">Jetzt unverbindlich anfragen</h2>
-      <p class="section-intro" style="margin-bottom: 40px">
-        Schreiben Sie uns für Muster, Großbestellungen oder ein individuelles
-        Projekt.
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+      <h2 class="section-title">Preise</h2>
+      <p class="pricing-subtitle">
+        Inklusive Designvorschlag, Gravur und Versand (DE)
       </p>
-      <form class="contact-form" id="contact-form">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Menge</th>
+            <th>1 Logo</th>
+            <th>2 Logos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5–9 Karten</td>
+            <td>12,00 €</td>
+            <td>13,50 €</td>
+          </tr>
+          <tr>
+            <td>10–24 Karten</td>
+            <td>9,90 €</td>
+            <td>11,50 €</td>
+          </tr>
+          <tr>
+            <td>25–49 Karten</td>
+            <td>8,50 €</td>
+            <td>9,90 €</td>
+          </tr>
+          <tr>
+            <td>50+</td>
+            <td>7,90 €</td>
+            <td>9,50 €</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Request/Configurator Section -->
+    <section id="anfrage" class="request-section">
+      <h2 class="section-title">Anfrage stellen</h2>
+      <form class="request-form" id="request-form" action="#" method="POST">
+        <!-- TODO: Formular-Endpoint einfügen (FormSubmit, Netlify Forms, oder PHP) -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="Neue Anfrage von Laser Jungle Website"
+        />
+        <input type="hidden" name="_captcha" value="false" />
+
         <div class="form-group">
-          <label for="firma">Firma *</label>
-          <input type="text" id="firma" name="firma" required />
-        </div>
-        <div class="form-group">
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">E-Mail *</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="nachricht">Nachricht *</label>
-          <textarea
-            id="nachricht"
-            name="nachricht"
+          <label for="email">E-Mail-Adresse *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
             required
-            placeholder="Beschreiben Sie Ihr Projekt, die Anzahl der Karten und Ihre Wünsche..."
-          ></textarea>
+            placeholder="ihre@email.de"
+          />
         </div>
+
         <div class="form-group">
-          <label>Logo oder Datei hochladen (optional)</label>
-          <div class="file-upload" id="file-upload-container">
-            <input
-              type="file"
-              id="file-upload"
-              name="file"
-              accept="image/*,.pdf"
-            />
-            <label
-              for="file-upload"
-              id="file-upload-label"
-              style="cursor: pointer; margin: 0"
-            >
-              📎 Datei auswählen oder hier ablegen
+          <label>Kartendesign *</label>
+          <div class="design-options">
+            <!-- TODO: Design-Auswahl mit echten Bildern verlinken -->
+            <label class="design-option">
+              <input
+                type="radio"
+                name="design"
+                value="weihnachten"
+                required
+                data-price-1="12.00"
+                data-price-2="13.50"
+              />
+              <div class="design-option-content">
+                <div class="design-option-image">🎄</div>
+                <div class="design-option-label">Weihnachten</div>
+              </div>
             </label>
-            <span
-              id="file-name"
-              style="
-                display: none;
-                margin-top: 8px;
-                color: var(--text-medium);
-                font-size: 0.9rem;
-              "
-            ></span>
+            <label class="design-option">
+              <input
+                type="radio"
+                name="design"
+                value="business"
+                required
+                data-price-1="12.00"
+                data-price-2="13.50"
+              />
+              <div class="design-option-content">
+                <div class="design-option-image">📈</div>
+                <div class="design-option-label">Business</div>
+              </div>
+            </label>
+            <label class="design-option">
+              <input
+                type="radio"
+                name="design"
+                value="blanko"
+                required
+                data-price-1="12.00"
+                data-price-2="13.50"
+              />
+              <div class="design-option-content">
+                <div class="design-option-image">🔲</div>
+                <div class="design-option-label">Blanko</div>
+              </div>
+            </label>
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Anzahl Karten *</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="5"
+            required
+            placeholder="z.B. 20"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="logo-count">Logo-Auswahl *</label>
+          <select id="logo-count" name="logo-count" required>
+            <option value="">Bitte wählen</option>
+            <option value="1">1 Logo</option>
+            <option value="2">2 Logos</option>
+          </select>
           <p
             style="
               font-size: 0.85rem;
@@ -868,43 +808,40 @@
               margin-top: 8px;
             "
           >
-            Hinweis: Für Datei-Uploads kontaktieren Sie uns bitte direkt per
-            E-Mail.
+            Hinweis: Logos werden nachträglich per E-Mail oder Google Drive-Link
+            ausgetauscht
           </p>
         </div>
-        <button type="submit" class="submit-button">
-          Jetzt unverbindlich anfragen
+
+        <div class="form-group">
+          <label for="message">Wunschtext / Spruch (optional)</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Ihre individuelle Nachricht oder Spruch für die Karte..."
+          ></textarea>
+        </div>
+
+        <!-- TODO: Preisvorschau via JS basierend auf Eingaben → Einzelpreis + Gesamtpreis -->
+        <div class="price-preview" id="price-preview" style="display: none">
+          <div class="price-preview-label">Preisvorschau</div>
+          <div class="price-preview-value" id="price-total">0,00 €</div>
+          <div class="price-preview-details">
+            <span id="price-per-unit">0,00 €</span> pro Stück
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button" id="submit-button">
+          Unverbindlich anfragen
         </button>
       </form>
-      <div class="contact-alternative">
-        <p>
-          Oder schreiben Sie uns direkt:
-          <a href="mailto:hello@laser-jungle.com">hello@laser-jungle.com</a>
-        </p>
-      </div>
     </section>
-
-    <!-- Etsy Section -->
-    <div class="etsy-section">
-      <p>Sie suchen ein persönliches Geschenk oder planen privat?</p>
-      <p style="font-size: 1rem; margin-top: -10px">
-        Schauen Sie in unseren Etsy-Shop.
-      </p>
-      <a
-        href="https://www.etsy.com/de/shop/LaserJungle"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="etsy-button"
-      >
-        → Etsy-Shop besuchen
-      </a>
-    </div>
 
     <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <p><strong>Laser Jungle</strong></p>
         <div class="footer-links">
+          <!-- TODO: Platzhalter oder einfache Verlinkung zu statischen Seiten -->
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
         </div>
@@ -915,71 +852,109 @@
     </footer>
 
     <script>
-      // File upload display
-      const fileInput = document.getElementById("file-upload");
-      const fileNameDisplay = document.getElementById("file-name");
-      const fileUploadLabel = document.getElementById("file-upload-label");
+      // Price Calculator
+      const priceTable = {
+        "5-9": { 1: 12.0, 2: 13.5 },
+        "10-24": { 1: 9.9, 2: 11.5 },
+        "25-49": { 1: 8.5, 2: 9.9 },
+        "50+": { 1: 7.9, 2: 9.5 },
+      };
 
-      if (fileInput) {
-        fileInput.addEventListener("change", function (e) {
-          const file = e.target.files[0];
-          if (file) {
-            fileNameDisplay.textContent = "✓ " + file.name;
-            fileNameDisplay.style.display = "block";
-            fileUploadLabel.textContent = "📎 Andere Datei auswählen";
-          } else {
-            fileNameDisplay.style.display = "none";
-            fileUploadLabel.textContent =
-              "📎 Datei auswählen oder hier ablegen";
-          }
-        });
+      function getPriceTier(quantity) {
+        if (quantity >= 50) return "50+";
+        if (quantity >= 25) return "25-49";
+        if (quantity >= 10) return "10-24";
+        return "5-9";
+      }
 
-        // Form submission handling
-        const form = document.getElementById("contact-form");
-        if (form) {
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
+      function calculatePrice() {
+        const quantityInput = document.getElementById("quantity");
+        const logoCountSelect = document.getElementById("logo-count");
+        const designRadios = document.querySelectorAll('input[name="design"]');
+        const pricePreview = document.getElementById("price-preview");
+        const priceTotal = document.getElementById("price-total");
+        const pricePerUnit = document.getElementById("price-per-unit");
 
-            const firma = document.getElementById("firma").value;
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const nachricht = document.getElementById("nachricht").value;
+        const quantity = parseInt(quantityInput.value) || 0;
+        const logoCount = parseInt(logoCountSelect.value) || 0;
+        const designSelected = Array.from(designRadios).some(
+          (radio) => radio.checked
+        );
 
-            // Create mailto link with form data
-            const subject = encodeURIComponent("Anfrage von " + firma);
-            const body = encodeURIComponent(
-              "Firma: " +
-                firma +
-                "\n" +
-                "Name: " +
-                name +
-                "\n" +
-                "E-Mail: " +
-                email +
-                "\n\n" +
-                "Nachricht:\n" +
-                nachricht +
-                (fileInput.files.length > 0
-                  ? "\n\nHinweis: Eine Datei wurde ausgewählt. Bitte senden Sie diese separat per E-Mail."
-                  : "")
-            );
+        if (quantity >= 5 && logoCount > 0 && designSelected) {
+          const tier = getPriceTier(quantity);
+          const unitPrice = priceTable[tier][logoCount];
+          const totalPrice = unitPrice * quantity;
 
-            // For file uploads, show a message
-            if (fileInput.files.length > 0) {
-              alert(
-                "Hinweis: Datei-Uploads funktionieren nicht über dieses Formular. Bitte senden Sie Ihre Datei separat per E-Mail an hello@laser-jungle.com."
-              );
-            }
-
-            // Open email client
-            window.location.href =
-              "mailto:hello@laser-jungle.com?subject=" +
-              subject +
-              "&body=" +
-              body;
-          });
+          priceTotal.textContent = totalPrice.toFixed(2) + " €";
+          pricePerUnit.textContent = unitPrice.toFixed(2) + " €";
+          pricePreview.style.display = "block";
+        } else {
+          pricePreview.style.display = "none";
         }
       }
+
+      // Event Listeners for Price Calculation
+      document
+        .getElementById("quantity")
+        .addEventListener("input", calculatePrice);
+      document
+        .getElementById("logo-count")
+        .addEventListener("change", calculatePrice);
+      document.querySelectorAll('input[name="design"]').forEach((radio) => {
+        radio.addEventListener("change", calculatePrice);
+      });
+
+      // Form Submission
+      // TODO: Formularverarbeitung → per E-Mail oder FormSubmit / Netlify / eigener Backend-Endpoint
+      // TODO: Nach Absenden individuelle Mailantwort mit Upload-Link / Google Drive erstellen
+      document
+        .getElementById("request-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const email = formData.get("email");
+          const design = formData.get("design");
+          const quantity = formData.get("quantity");
+          const logoCount = formData.get("logo-count");
+          const message = formData.get("message");
+
+          // Calculate final price
+          const tier = getPriceTier(parseInt(quantity));
+          const unitPrice = priceTable[tier][parseInt(logoCount)];
+          const totalPrice = unitPrice * parseInt(quantity);
+
+          // Create email body
+          const emailBody = `
+Neue Anfrage von Laser Jungle Website
+
+E-Mail: ${email}
+Design: ${design}
+Anzahl: ${quantity} Karten
+Logo-Anzahl: ${logoCount}
+Wunschtext: ${message || "(keine Angabe)"}
+
+Preisvorschau:
+Einzelpreis: ${unitPrice.toFixed(2)} €
+Gesamtpreis: ${totalPrice.toFixed(2)} €
+        `.trim();
+
+          // For now, use mailto (can be replaced with FormSubmit or other service)
+          const mailtoLink = `mailto:hello@laser-jungle.com?subject=Neue Anfrage - ${quantity} Karten&body=${encodeURIComponent(
+            emailBody
+          )}`;
+
+          // TODO: Replace with actual form submission endpoint
+          // Example for FormSubmit: this.action = "https://formsubmit.co/your-email@example.com";
+
+          window.location.href = mailtoLink;
+
+          // Show success message
+          alert(
+            "Vielen Dank für Ihre Anfrage! Sie werden weitergeleitet, um die E-Mail zu senden."
+          );
+        });
 
       // Smooth scroll for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
