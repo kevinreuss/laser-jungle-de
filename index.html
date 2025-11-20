@@ -18,21 +18,25 @@
       }
 
       :root {
-        --beige: #f5f1e8;
-        --warm-beige: #e8ddd4;
-        --wood-brown: #d4c4b0;
-        --pastel-coral: #fcd5ce;
-        --pastel-peach: #ffd6a5;
-        --text-dark: #2c2c2c;
-        --text-medium: #5a5a5a;
-        --shadow-soft: rgba(0, 0, 0, 0.08);
-        --shadow-medium: rgba(0, 0, 0, 0.12);
+        --jungle-cream: #f5f7f2;
+        --jungle-light: #e8f0e6;
+        --jungle-mint: #d4e8d8;
+        --jungle-sage: #b8d4c1;
+        --jungle-green: #8fb99f;
+        --jungle-deep: #6b9b7a;
+        --jungle-dark: #4a7a5a;
+        --accent-warm: #f0e8d4;
+        --wood-brown: #c4b8a8;
+        --text-dark: #1a2e1f;
+        --text-medium: #3d5a47;
+        --shadow-soft: rgba(74, 122, 90, 0.08);
+        --shadow-medium: rgba(74, 122, 90, 0.15);
       }
 
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
           "Helvetica Neue", Arial, sans-serif;
-        background: var(--beige);
+        background: var(--jungle-cream);
         color: var(--text-dark);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
@@ -47,9 +51,9 @@
         justify-content: center;
         background: linear-gradient(
           135deg,
-          var(--pastel-peach) 0%,
-          var(--warm-beige) 50%,
-          var(--pastel-coral) 100%
+          var(--jungle-mint) 0%,
+          var(--jungle-light) 40%,
+          var(--jungle-sage) 100%
         );
         padding: 80px 20px;
         text-align: center;
@@ -70,8 +74,8 @@
         margin-bottom: 40px;
         background: linear-gradient(
           135deg,
-          var(--wood-brown),
-          var(--warm-beige)
+          var(--jungle-green),
+          var(--jungle-mint)
         );
         display: flex;
         align-items: center;
@@ -100,7 +104,7 @@
       .cta-button {
         display: inline-block;
         padding: 16px 32px;
-        background: var(--text-dark);
+        background: var(--jungle-deep);
         color: white;
         text-decoration: none;
         border-radius: 8px;
@@ -113,7 +117,7 @@
       .cta-button:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px var(--shadow-medium);
-        background: #1a1a1a;
+        background: var(--jungle-dark);
       }
 
       /* Section Styling */
@@ -206,8 +210,8 @@
         object-fit: cover;
         background: linear-gradient(
           135deg,
-          var(--wood-brown),
-          var(--warm-beige)
+          var(--jungle-green),
+          var(--jungle-mint)
         );
         display: flex;
         align-items: center;
@@ -247,7 +251,7 @@
         display: inline-block;
         width: 50px;
         height: 50px;
-        background: var(--text-dark);
+        background: var(--jungle-deep);
         color: white;
         border-radius: 50%;
         line-height: 50px;
@@ -298,7 +302,7 @@
       .pricing-features li {
         padding: 10px 0;
         color: var(--text-medium);
-        border-bottom: 1px solid var(--warm-beige);
+        border-bottom: 1px solid var(--jungle-mint);
       }
 
       .pricing-features li:last-child {
@@ -337,12 +341,12 @@
       .form-group textarea {
         width: 100%;
         padding: 12px 16px;
-        border: 2px solid var(--warm-beige);
+        border: 2px solid var(--jungle-mint);
         border-radius: 8px;
         font-size: 1rem;
         font-family: inherit;
         transition: border-color 0.3s ease;
-        background: var(--beige);
+        background: var(--jungle-cream);
       }
 
       .form-group input:focus,
@@ -359,7 +363,7 @@
 
       .file-upload {
         padding: 12px;
-        border: 2px dashed var(--warm-beige);
+        border: 2px dashed var(--jungle-mint);
         border-radius: 8px;
         text-align: center;
         color: var(--text-medium);
@@ -368,8 +372,8 @@
       }
 
       .file-upload:hover {
-        border-color: var(--text-dark);
-        background: var(--beige);
+        border-color: var(--jungle-deep);
+        background: var(--jungle-light);
       }
 
       .file-upload input[type="file"] {
@@ -379,7 +383,7 @@
       .submit-button {
         width: 100%;
         padding: 16px;
-        background: var(--text-dark);
+        background: var(--jungle-deep);
         color: white;
         border: none;
         border-radius: 8px;
@@ -391,7 +395,7 @@
       }
 
       .submit-button:hover {
-        background: #1a1a1a;
+        background: var(--jungle-dark);
         transform: translateY(-2px);
         box-shadow: 0 4px 12px var(--shadow-medium);
       }
@@ -412,8 +416,8 @@
       .etsy-section {
         background: linear-gradient(
           135deg,
-          var(--warm-beige),
-          var(--pastel-peach)
+          var(--jungle-light),
+          var(--jungle-mint)
         );
         padding: 60px 20px;
         text-align: center;
@@ -445,7 +449,7 @@
 
       /* Footer */
       footer {
-        background: var(--text-dark);
+        background: var(--jungle-dark);
         color: white;
         padding: 50px 20px 30px;
         text-align: center;
@@ -568,7 +572,7 @@
     </section>
 
     <!-- Showroom Section -->
-    <section style="background: var(--warm-beige); border-radius: 0">
+    <section style="background: var(--jungle-light); border-radius: 0">
       <h2 class="section-title">Beispielkarten</h2>
       <p class="section-intro" style="margin-bottom: 30px">
         Konkrete Projekte, die Vertrauen schaffen und Inspiration bieten.
@@ -645,7 +649,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section id="kontakt" style="background: var(--beige)">
+    <section id="kontakt" style="background: var(--jungle-cream)">
       <h2 class="section-title">Jetzt unverbindlich anfragen</h2>
       <p class="section-intro" style="margin-bottom: 40px">
         Schreiben Sie uns für Muster, Großbestellungen oder ein individuelles
@@ -742,11 +746,9 @@
     <footer>
       <div class="footer-content">
         <p><strong>Laser Jungle</strong></p>
-        <p>Kevin Reuss & Charlotte J.</p>
-        <p>Lengenfeld, Deutschland</p>
         <div class="footer-links">
-          <a href="#impressum">Impressum</a>
-          <a href="#datenschutz">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
         </div>
         <p style="margin-top: 30px; font-size: 0.9rem">
           &copy; 2025 Laser Jungle
@@ -825,11 +827,7 @@
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           const href = this.getAttribute("href");
-          if (
-            href !== "#" &&
-            href !== "#impressum" &&
-            href !== "#datenschutz"
-          ) {
+          if (href !== "#") {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
