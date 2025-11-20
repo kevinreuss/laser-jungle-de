@@ -155,8 +155,91 @@
       }
 
       @media (max-width: 768px) {
+        .container {
+          padding: 30px 15px;
+        }
+
+        .header {
+          padding: 30px 15px;
+          margin-bottom: 30px;
+        }
+
+        .header h1 {
+          font-size: clamp(1.5rem, 5vw, 2rem);
+        }
+
+        .back-link {
+          padding: 10px 20px;
+          font-size: 0.95rem;
+          margin-top: 15px;
+        }
+
         .content {
-          padding: 30px 24px;
+          padding: 30px 20px;
+        }
+
+        .content h2 {
+          font-size: 1.3rem;
+          margin-top: 25px;
+          margin-bottom: 12px;
+        }
+
+        .content h3 {
+          font-size: 1.1rem;
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+
+        .content p {
+          font-size: 0.95rem;
+          margin-bottom: 12px;
+        }
+
+        .content ul {
+          margin-left: 15px;
+        }
+
+        .content li {
+          font-size: 0.95rem;
+          margin-bottom: 8px;
+        }
+
+        footer {
+          padding: 25px 15px;
+          margin-top: 40px;
+        }
+
+        .footer-links {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 15px;
+        }
+
+        .footer-links a {
+          margin: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 20px 10px;
+        }
+
+        .header {
+          padding: 25px 10px;
+        }
+
+        .content {
+          padding: 25px 15px;
+        }
+
+        .content h2 {
+          font-size: 1.2rem;
+        }
+
+        .content h3 {
+          font-size: 1rem;
         }
       }
     </style>
