@@ -3,162 +3,844 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laser Jungle – Persönliche Karten für Firmen</title>
+    <meta
+      name="description"
+      content="Persönliche, gelaserte Karten für Firmenkunden. Handgemacht aus Holz, individuell gestaltet mit Logo des Empfängers."
+    />
+    <title>
+      Laser Jungle – Persönliche Karten für Ihre Kunden, Partner oder Investoren
+    </title>
     <style>
-      body {
+      * {
         margin: 0;
-        font-family: "Helvetica Neue", sans-serif;
-        background: #fffef9;
-        color: #2c2c2c;
+        padding: 0;
+        box-sizing: border-box;
       }
-      header {
-        background: linear-gradient(120deg, #ffd6a5, #fcd5ce);
-        padding: 60px 20px;
+
+      :root {
+        --beige: #f5f1e8;
+        --warm-beige: #e8ddd4;
+        --wood-brown: #d4c4b0;
+        --pastel-coral: #fcd5ce;
+        --pastel-peach: #ffd6a5;
+        --text-dark: #2c2c2c;
+        --text-medium: #5a5a5a;
+        --shadow-soft: rgba(0, 0, 0, 0.08);
+        --shadow-medium: rgba(0, 0, 0, 0.12);
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--beige);
+        color: var(--text-dark);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--pastel-peach) 0%,
+          var(--warm-beige) 50%,
+          var(--pastel-coral) 100%
+        );
+        padding: 80px 20px;
         text-align: center;
       }
-      header h1 {
-        font-size: 2.8rem;
-        margin: 0;
+
+      .hero-content {
+        max-width: 900px;
+        z-index: 1;
       }
-      header p {
-        font-size: 1.2rem;
-        margin: 10px 0 30px;
+
+      .hero-image {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px var(--shadow-medium);
+        margin-bottom: 40px;
+        background: linear-gradient(
+          135deg,
+          var(--wood-brown),
+          var(--warm-beige)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-medium);
+        font-size: 1.1rem;
       }
-      .cta {
+
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+        letter-spacing: -0.02em;
+      }
+
+      .hero .subtitle {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        color: var(--text-medium);
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
         display: inline-block;
-        padding: 14px 24px;
-        background: #2c2c2c;
+        padding: 16px 32px;
+        background: var(--text-dark);
         color: white;
         text-decoration: none;
         border-radius: 8px;
-        font-weight: bold;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px var(--shadow-soft);
       }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--shadow-medium);
+        background: #1a1a1a;
+      }
+
+      /* Section Styling */
       section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--text-dark);
+        letter-spacing: -0.01em;
+      }
+
+      .section-intro {
+        font-size: 1.2rem;
+        color: var(--text-medium);
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 60px;
+        line-height: 1.8;
+      }
+
+      /* USP Section */
+      .usp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .usp-box {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 16px var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .usp-box:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px var(--shadow-medium);
+      }
+
+      .usp-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .usp-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        color: var(--text-dark);
+      }
+
+      .usp-box p {
+        color: var(--text-medium);
+        line-height: 1.6;
+      }
+
+      /* Showroom Section */
+      .showroom-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .showroom-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .showroom-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px var(--shadow-medium);
+      }
+
+      .showroom-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background: linear-gradient(
+          135deg,
+          var(--wood-brown),
+          var(--warm-beige)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-medium);
+      }
+
+      .showroom-content {
+        padding: 24px;
+      }
+
+      .showroom-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        color: var(--text-dark);
+      }
+
+      .showroom-content p {
+        color: var(--text-medium);
+        font-size: 0.95rem;
+      }
+
+      /* Process Section */
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin: 50px 0;
+      }
+
+      .process-step {
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .step-number {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: var(--text-dark);
+        color: white;
+        border-radius: 50%;
+        line-height: 50px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .process-step h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        color: var(--text-dark);
+      }
+
+      .process-step p {
+        color: var(--text-medium);
+        line-height: 1.6;
+      }
+
+      .pricing-box {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 40px;
+        box-shadow: 0 4px 16px var(--shadow-soft);
+      }
+
+      .pricing-box .price {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+      }
+
+      .pricing-box .price-note {
+        color: var(--text-medium);
+        margin-bottom: 20px;
+      }
+
+      .pricing-features {
+        list-style: none;
+        text-align: left;
+        max-width: 500px;
+        margin: 30px auto 0;
+      }
+
+      .pricing-features li {
+        padding: 10px 0;
+        color: var(--text-medium);
+        border-bottom: 1px solid var(--warm-beige);
+      }
+
+      .pricing-features li:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-features li::before {
+        content: "✓ ";
+        color: #4a9b4a;
+        font-weight: bold;
+        margin-right: 8px;
+      }
+
+      /* Contact Form */
+      .contact-form {
+        background: white;
+        padding: 50px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px var(--shadow-soft);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid var(--warm-beige);
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.3s ease;
+        background: var(--beige);
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--text-dark);
+        background: white;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .file-upload {
+        padding: 12px;
+        border: 2px dashed var(--warm-beige);
+        border-radius: 8px;
+        text-align: center;
+        color: var(--text-medium);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload:hover {
+        border-color: var(--text-dark);
+        background: var(--beige);
+      }
+
+      .file-upload input[type="file"] {
+        display: none;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 16px;
+        background: var(--text-dark);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .submit-button:hover {
+        background: #1a1a1a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--shadow-medium);
+      }
+
+      .contact-alternative {
+        text-align: center;
+        margin-top: 30px;
+        color: var(--text-medium);
+      }
+
+      .contact-alternative a {
+        color: var(--text-dark);
+        text-decoration: underline;
+        font-weight: 500;
+      }
+
+      /* Etsy Section */
+      .etsy-section {
+        background: linear-gradient(
+          135deg,
+          var(--warm-beige),
+          var(--pastel-peach)
+        );
         padding: 60px 20px;
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .etsy-section p {
+        font-size: 1.2rem;
+        color: var(--text-medium);
+        margin-bottom: 20px;
+      }
+
+      .etsy-button {
+        display: inline-block;
+        padding: 14px 28px;
+        background: white;
+        color: var(--text-dark);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px var(--shadow-soft);
+      }
+
+      .etsy-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--shadow-medium);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--text-dark);
+        color: white;
+        padding: 50px 20px 30px;
+        text-align: center;
+      }
+
+      .footer-content {
         max-width: 800px;
         margin: 0 auto;
       }
-      h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
+
+      .footer-content p {
+        margin-bottom: 12px;
+        color: rgba(255, 255, 255, 0.8);
       }
-      .cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+
+      .footer-links {
+        margin-top: 20px;
       }
-      .card {
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 20px;
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s ease;
       }
-      .card img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 10px;
-      }
-      footer {
-        background: #f3f3f3;
-        padding: 40px 20px;
-        text-align: center;
-        font-size: 0.9rem;
-      }
-      .etsy-link {
-        text-align: center;
-        padding: 40px 0;
-      }
-      .etsy-link a {
-        color: #2c2c2c;
+
+      .footer-links a:hover {
+        color: white;
         text-decoration: underline;
-        font-weight: bold;
       }
-      @media (max-width: 600px) {
-        .cards {
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 60vh;
+          padding: 60px 20px;
+        }
+
+        section {
+          padding: 60px 20px;
+        }
+
+        .usp-grid,
+        .showroom-grid,
+        .process-steps {
           grid-template-columns: 1fr;
         }
+
+        .contact-form {
+          padding: 40px 24px;
+        }
+
+        .pricing-box {
+          padding: 30px 24px;
+        }
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Persönliche Laser-Karten<br />für Firmenkunden</h1>
-      <p>Mit dem Logo des Empfängers. Persönlich. Hochwertig. Handgemacht.</p>
-      <a href="#kontakt" class="cta">Unverbindlich anfragen</a>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-image">
+          [Hochwertiges Foto einer personalisierten Karte mit Logo-Gravur]
+        </div>
+        <h1>Persönliche Karten für Ihre Kunden, Partner oder Investoren.</h1>
+        <p class="subtitle">
+          Gelaserte Karten mit dem Logo des Empfängers – persönlich, hochwertig,
+          unvergesslich.
+        </p>
+        <p class="subtitle" style="font-size: 1.1rem; margin-top: -20px">
+          Handgemacht aus Holz, individuell gestaltet. Kein generisches
+          Werbegeschenk – echte Wertschätzung.
+        </p>
+        <a href="#kontakt" class="cta-button">Muster anfordern</a>
+      </div>
+    </section>
 
+    <!-- USP Section -->
     <section>
-      <h2>Was wir anbieten</h2>
-      <p>
-        Unsere gravierten Holzkarten bringen Ihre Botschaft auf ein neues Level.
-        Ob zu Weihnachten, zum Projektabschluss oder als Dankeschön – wir
-        personalisieren jede Karte mit dem Logo und der Botschaft des
-        Empfängers. Das fühlt sich nicht wie Werbung an, sondern wie ein echtes
-        Geschenk.
+      <h2 class="section-title">Was wir anbieten</h2>
+      <p class="section-intro">
+        Wir stellen hochwertige Karten aus Holz und Acryl her – gelasert,
+        gestaltet und versendet aus Deutschland. Statt Eigenwerbung steht der
+        Empfänger im Mittelpunkt: Dessen Logo, Slogan oder Botschaft ist der
+        zentrale Teil der Karte. Für Weihnachten, Projektabschlüsse, neue
+        Partnerschaften oder einfach ein echtes Dankeschön.
       </p>
-      <div class="cards">
-        <div class="card">
-          <img
-            src="https://via.placeholder.com/400x250?text=Beispiel+Prequel"
-            alt="Beispiel Prequel"
-          />
+      <div class="usp-grid">
+        <div class="usp-box">
+          <div class="usp-icon">🎯</div>
+          <h3>Logo des Empfängers im Fokus</h3>
           <p>
-            Individuelle Weihnachtskarte für Investoren von Prequel Ventures.
+            Die Karte wird zum persönlichen Geschenk – das Logo des Empfängers
+            steht im Mittelpunkt, nicht Ihre Marke.
           </p>
         </div>
-        <div class="card">
-          <img
-            src="https://via.placeholder.com/400x250?text=Dr.+Matzat"
-            alt="Beispiel Dr. Matzat"
-          />
+        <div class="usp-box">
+          <div class="usp-icon">⚡</div>
+          <h3>Handgemacht mit Lasertechnik</h3>
           <p>
-            Persönliche Danksagungskarte mit graviertem Logo für treue
-            Geschäftspartner.
+            Präzise Gravuren auf hochwertigem Holz oder Acryl. Jede Karte wird
+            individuell gefertigt und versendet.
+          </p>
+        </div>
+        <div class="usp-box">
+          <div class="usp-icon">📦</div>
+          <h3>Schon ab 10 Stück bestellbar</h3>
+          <p>
+            Keine Mindestmengen im dreistelligen Bereich. Ab 10 Karten können
+            Sie Ihre personalisierte Serie bestellen.
           </p>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Preise & Ablauf</h2>
-      <ul>
-        <li><strong>Standardkarte:</strong> 7,90 € pro Stück (ab 10 Stück)</li>
-        <li><strong>Individuelle Gravur:</strong> Inklusive Logo + Text</li>
-        <li>
-          <strong>Optional:</strong> QR-Code, Firmenfarben als Gravurmuster,
-          Geschenkverpackung
-        </li>
-        <li><strong>Lieferzeit:</strong> 5–7 Werktage nach Freigabe</li>
-      </ul>
+    <!-- Showroom Section -->
+    <section style="background: var(--warm-beige); border-radius: 0">
+      <h2 class="section-title">Beispielkarten</h2>
+      <p class="section-intro" style="margin-bottom: 30px">
+        Konkrete Projekte, die Vertrauen schaffen und Inspiration bieten.
+      </p>
+      <div class="showroom-grid">
+        <div class="showroom-card">
+          <div class="showroom-image">
+            [Foto: Prequel Ventures Karte mit Investor-Logo]
+          </div>
+          <div class="showroom-content">
+            <h3>Prequel Ventures</h3>
+            <p>Investorenkarte mit persönlichem Dank und Logo-Gravur</p>
+          </div>
+        </div>
+        <div class="showroom-card">
+          <div class="showroom-image">
+            [Foto: Dr. Matzat Karte an Praxispartner]
+          </div>
+          <div class="showroom-content">
+            <h3>Dr. Matzat</h3>
+            <p>
+              Persönliche Danksagungskarte mit graviertem Logo für treue
+              Geschäftspartner
+            </p>
+          </div>
+        </div>
+        <div class="showroom-card">
+          <div class="showroom-image">
+            [Platzhalter für zukünftige Referenzkarte]
+          </div>
+          <div class="showroom-content">
+            <h3>Ihr Projekt</h3>
+            <p>Werden Sie Teil unserer Referenzen</p>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Pricing & Process Section -->
     <section>
-      <h2 id="kontakt">Kontakt</h2>
-      <p>
+      <h2 class="section-title">So einfach funktioniert's</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Kontakt aufnehmen</h3>
+          <p>Musterkarte anfordern oder direkt Ihr Projekt beschreiben</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Entwurf & Freigabe</h3>
+          <p>
+            Wir erstellen den Entwurf mit Logo und Gravur – Sie geben Feedback
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Produktion & Versand</h3>
+          <p>
+            Innerhalb von 5–7 Werktagen erhalten Sie Ihre personalisierten
+            Karten
+          </p>
+        </div>
+      </div>
+      <div class="pricing-box">
+        <div class="price">ab 7,90 €</div>
+        <div class="price-note">pro Stück (ab 10 Karten)</div>
+        <ul class="pricing-features">
+          <li>Individuelle Gravur, Logo & Wunschtext inklusive</li>
+          <li>Hochwertige Materialien (Holz oder Acryl)</li>
+          <li>Auf Wunsch: QR-Codes, Verpackung oder Extras</li>
+          <li>Versand aus Deutschland</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="kontakt" style="background: var(--beige)">
+      <h2 class="section-title">Jetzt unverbindlich anfragen</h2>
+      <p class="section-intro" style="margin-bottom: 40px">
         Schreiben Sie uns für Muster, Großbestellungen oder ein individuelles
-        Projekt:
+        Projekt.
       </p>
-      <p>
-        <strong>E-Mail:</strong>
-        <a href="mailto:hello@laser-jungle.com">hello@laser-jungle.com</a>
-      </p>
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label for="firma">Firma *</label>
+          <input type="text" id="firma" name="firma" required />
+        </div>
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="nachricht">Nachricht *</label>
+          <textarea
+            id="nachricht"
+            name="nachricht"
+            required
+            placeholder="Beschreiben Sie Ihr Projekt, die Anzahl der Karten und Ihre Wünsche..."
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label>Logo oder Datei hochladen (optional)</label>
+          <div class="file-upload" id="file-upload-container">
+            <input
+              type="file"
+              id="file-upload"
+              name="file"
+              accept="image/*,.pdf"
+            />
+            <label
+              for="file-upload"
+              id="file-upload-label"
+              style="cursor: pointer; margin: 0"
+            >
+              📎 Datei auswählen oder hier ablegen
+            </label>
+            <span
+              id="file-name"
+              style="
+                display: none;
+                margin-top: 8px;
+                color: var(--text-medium);
+                font-size: 0.9rem;
+              "
+            ></span>
+          </div>
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--text-medium);
+              margin-top: 8px;
+            "
+          >
+            Hinweis: Für Datei-Uploads kontaktieren Sie uns bitte direkt per
+            E-Mail.
+          </p>
+        </div>
+        <button type="submit" class="submit-button">
+          Jetzt unverbindlich anfragen
+        </button>
+      </form>
+      <div class="contact-alternative">
+        <p>
+          Oder schreiben Sie uns direkt:
+          <a href="mailto:hello@laser-jungle.com">hello@laser-jungle.com</a>
+        </p>
+      </div>
     </section>
 
-    <div class="etsy-link">
-      <p>
-        ✨ Auch für Privatkunden:
-        <a href="https://www.etsy.com/de/shop/LaserJungle" target="_blank"
-          >Hier geht’s zu unserem Etsy-Shop</a
-        >
+    <!-- Etsy Section -->
+    <div class="etsy-section">
+      <p>Sie suchen ein persönliches Geschenk oder planen privat?</p>
+      <p style="font-size: 1rem; margin-top: -10px">
+        Schauen Sie in unseren Etsy-Shop.
       </p>
+      <a
+        href="https://www.etsy.com/de/shop/LaserJungle"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="etsy-button"
+      >
+        → Etsy-Shop besuchen
+      </a>
     </div>
 
+    <!-- Footer -->
     <footer>
-      <p>
-        &copy; 2025 Laser Jungle – Kevin Reuss & Charlotte J. | Lengenfeld,
-        Deutschland
-      </p>
-      <p><a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
+      <div class="footer-content">
+        <p><strong>Laser Jungle</strong></p>
+        <p>Kevin Reuss & Charlotte J.</p>
+        <p>Lengenfeld, Deutschland</p>
+        <div class="footer-links">
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.9rem">
+          &copy; 2025 Laser Jungle
+        </p>
+      </div>
     </footer>
+
+    <script>
+      // File upload display
+      const fileInput = document.getElementById("file-upload");
+      const fileNameDisplay = document.getElementById("file-name");
+      const fileUploadLabel = document.getElementById("file-upload-label");
+
+      if (fileInput) {
+        fileInput.addEventListener("change", function (e) {
+          const file = e.target.files[0];
+          if (file) {
+            fileNameDisplay.textContent = "✓ " + file.name;
+            fileNameDisplay.style.display = "block";
+            fileUploadLabel.textContent = "📎 Andere Datei auswählen";
+          } else {
+            fileNameDisplay.style.display = "none";
+            fileUploadLabel.textContent =
+              "📎 Datei auswählen oder hier ablegen";
+          }
+        });
+
+        // Form submission handling
+        const form = document.getElementById("contact-form");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const firma = document.getElementById("firma").value;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const nachricht = document.getElementById("nachricht").value;
+
+            // Create mailto link with form data
+            const subject = encodeURIComponent("Anfrage von " + firma);
+            const body = encodeURIComponent(
+              "Firma: " +
+                firma +
+                "\n" +
+                "Name: " +
+                name +
+                "\n" +
+                "E-Mail: " +
+                email +
+                "\n\n" +
+                "Nachricht:\n" +
+                nachricht +
+                (fileInput.files.length > 0
+                  ? "\n\nHinweis: Eine Datei wurde ausgewählt. Bitte senden Sie diese separat per E-Mail."
+                  : "")
+            );
+
+            // For file uploads, show a message
+            if (fileInput.files.length > 0) {
+              alert(
+                "Hinweis: Datei-Uploads funktionieren nicht über dieses Formular. Bitte senden Sie Ihre Datei separat per E-Mail an hello@laser-jungle.com."
+              );
+            }
+
+            // Open email client
+            window.location.href =
+              "mailto:hello@laser-jungle.com?subject=" +
+              subject +
+              "&body=" +
+              body;
+          });
+        }
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (
+            href !== "#" &&
+            href !== "#impressum" &&
+            href !== "#datenschutz"
+          ) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
