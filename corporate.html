@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Individuell gelaserte Karten für Kunden, Partner & Investoren. Persönlich, hochwertig, mit Logo oder Botschaft – für besondere Geschäftsanlässe."
+      content="Individuell gelaserte Karten für Kunden, Partner & Investoren. Persönlich, hochwertig, mit Logo und Botschaft – für besondere Geschäftsanlässe."
     />
     <title>Corporate Laser Designs – Laser Jungle</title>
     <style>
@@ -40,7 +40,7 @@
       /* Navigation */
       .nav {
         background: white;
-        padding: 20px;
+        padding: 10px;
         box-shadow: 0 2px 8px var(--shadow-soft);
         position: sticky;
         top: 0;
@@ -63,10 +63,10 @@
         color: var(--text-dark);
       }
 
-      .nav-logo svg {
-        width: 32px;
-        height: 32px;
-        fill: var(--accent);
+      .nav-logo img {
+        height: 64px;
+        width: auto;
+        object-fit: contain;
       }
 
       .nav-logo-text {
@@ -196,21 +196,29 @@
       }
 
       .trust-logos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 60px;
-        flex-wrap: wrap;
-        max-width: 800px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 900px;
         margin: 0 auto;
+        align-items: center;
       }
 
       .trust-logo {
-        font-size: 1.2rem;
-        color: var(--text-medium);
-        opacity: 0.6;
-        font-weight: 500;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        opacity: 0.7;
         filter: grayscale(100%);
+        transition: opacity 0.3s ease, filter 0.3s ease;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+      }
+
+      .trust-logo:hover {
+        opacity: 1;
+        filter: grayscale(0%);
       }
 
       /* Gallery Section */
@@ -278,61 +286,96 @@
         margin-right: auto;
       }
 
-      .pricing-table {
-        width: 100%;
+      .pricing-range-container {
         max-width: 800px;
         margin: 0 auto;
-        border-collapse: collapse;
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 6px 24px var(--shadow-soft);
-      }
-
-      .pricing-table thead {
-        background: var(--sage);
-        color: var(--text-dark);
-      }
-
-      .pricing-table th {
-        padding: 20px;
-        text-align: left;
-        font-weight: 600;
-        font-size: 1.1rem;
-      }
-
-      .pricing-table th:first-child {
-        width: 40%;
-      }
-
-      .pricing-table th:not(:first-child) {
-        text-align: center;
-        width: 30%;
-      }
-
-      .pricing-table td {
-        padding: 18px 20px;
-        border-bottom: 1px solid var(--sand);
-        color: var(--text-dark);
-      }
-
-      .pricing-table td:not(:first-child) {
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.1rem;
-      }
-
-      .pricing-table tbody tr:last-child td {
-        border-bottom: none;
-      }
-
-      .pricing-table tbody tr:hover {
         background: var(--beige);
+        border-radius: 16px;
+        padding: 50px 40px;
+        box-shadow: 0 6px 24px var(--shadow-soft);
+        border: 1px solid var(--sand);
+      }
+
+      .pricing-range-main {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .pricing-range-label {
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      .pricing-range-value {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+      }
+
+      .pricing-range-note {
+        font-size: 1rem;
+        color: var(--text-medium);
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+
+      .pricing-factors {
+        border-top: 1px solid var(--sand);
+        padding-top: 30px;
+      }
+
+      .pricing-factors-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .pricing-factors-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        list-style: none;
+      }
+
+      .pricing-factor-item {
+        background: var(--beige);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .pricing-factor-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .pricing-factor-label {
+        font-weight: 500;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+      }
+
+      .pricing-factor-desc {
+        font-size: 0.85rem;
+        color: var(--text-medium);
+        line-height: 1.5;
       }
 
       /* Request/Configurator Section */
       .request-section {
         background: var(--light-green);
+      }
+
+      .request-section .pricing-subtitle {
+        color: white;
       }
 
       .request-form {
@@ -406,16 +449,26 @@
         box-shadow: 0 6px 20px var(--shadow-soft);
       }
 
+      .design-option:has(input[type="radio"]:checked) {
+        border-color: var(--accent);
+        border-width: 3px;
+        background: var(--light-green);
+      }
+
+      .design-option:has(input[type="radio"]:checked) .design-option-content {
+        background: transparent;
+      }
+
       .design-option input[type="radio"] {
         position: absolute;
         opacity: 0;
         width: 0;
         height: 0;
+        pointer-events: none;
       }
 
-      .design-option input[type="radio"]:checked + .design-option-content {
-        border-color: var(--accent);
-        background: var(--light-green);
+      .design-option label {
+        cursor: pointer;
       }
 
       .design-option-content {
@@ -426,22 +479,54 @@
 
       .design-option-image {
         width: 100%;
-        height: 150px;
-        object-fit: cover;
+        height: 180px;
+        object-fit: contain;
         border-radius: 8px;
         margin-bottom: 12px;
-        background: linear-gradient(135deg, var(--sage), var(--light-green));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-medium);
-        font-size: 2.5rem;
+        background: white;
+        border: 1px solid var(--sand);
+        padding: 8px;
       }
 
       .design-option-label {
         font-weight: 500;
         color: var(--text-dark);
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-top: 8px;
+      }
+
+      .card-preview-container {
+        margin-top: 30px;
+        padding: 30px;
+        background: var(--beige);
+        border-radius: 12px;
+        border: 2px dashed var(--sand);
+        text-align: center;
+        display: none;
+      }
+
+      .card-preview-container.active {
+        display: block;
+      }
+
+      .card-preview-label {
+        font-size: 0.9rem;
+        color: var(--text-medium);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .card-preview-image {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px var(--shadow-soft);
+        background: white;
+        padding: 15px;
+        margin: 0 auto;
       }
 
       .price-preview {
@@ -560,7 +645,13 @@
         }
 
         .trust-logos {
-          gap: 40px;
+          grid-template-columns: 1fr;
+          gap: 30px;
+          max-width: 400px;
+        }
+
+        .trust-logo {
+          padding: 15px;
         }
 
         .gallery-grid {
@@ -569,13 +660,16 @@
           margin-top: 40px;
         }
 
-        .pricing-table {
-          font-size: 0.9rem;
+        .pricing-range-container {
+          padding: 35px 25px;
         }
 
-        .pricing-table th,
-        .pricing-table td {
-          padding: 14px 12px;
+        .pricing-range-value {
+          font-size: 2rem;
+        }
+
+        .pricing-factors-list {
+          grid-template-columns: 1fr;
         }
 
         .request-form {
@@ -583,11 +677,16 @@
         }
 
         .design-options {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
         }
 
-        .price-preview-value {
-          font-size: 1.6rem;
+        .card-preview-container {
+          padding: 20px;
+        }
+
+        .card-preview-image {
+          max-width: 100%;
         }
       }
 
@@ -606,17 +705,28 @@
           padding: 50px 10px;
         }
 
-        .pricing-table {
-          font-size: 0.85rem;
+        .pricing-range-container {
+          padding: 30px 20px;
         }
 
-        .pricing-table th,
-        .pricing-table td {
-          padding: 12px 8px;
+        .pricing-range-value {
+          font-size: 1.8rem;
+        }
+
+        .pricing-range-note {
+          font-size: 0.95rem;
         }
 
         .request-form {
           padding: 30px 20px;
+        }
+
+        .design-options {
+          grid-template-columns: 1fr;
+        }
+
+        .card-preview-container {
+          padding: 15px;
         }
 
         .footer-links {
@@ -636,12 +746,7 @@
     <nav class="nav">
       <div class="nav-content">
         <a href="index.html" class="nav-logo">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-            />
-          </svg>
-          <span class="nav-logo-text">Laser Jungle</span>
+          <img src="media/laser-jungle-logo.png" alt="Laser Jungle Logo" />
         </a>
         <a href="index.html" class="nav-link">← Zurück zur Startseite</a>
       </div>
@@ -650,203 +755,152 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <!-- TODO: Bildpfad für Hero-Bild ersetzen -->
-        <div class="hero-image">
-          [Hochwertiges Foto einer gelaserten Karte mit Empfängerlogo]
-        </div>
-        <h1>Individuell gelaserte Karten für Kunden, Partner & Investoren</h1>
+        <img
+          src="media/B2B-background.JPG"
+          alt="Corporate Laser Designs"
+          class="hero-image"
+        />
+        <h1>
+          Individuell gelaserte Karten für Kunden, Partner, Mitarbeiter & mehr
+        </h1>
         <p class="subtitle">
-          Persönlich, hochwertig, mit Logo oder Botschaft – für besondere
-          Geschäftsanlässe
+          Persönlich, hochwertig, mit Logo und Botschaft - für Weihnachten,
+          Danksagungen, Einladungen und alle besonderen Geschäftsanlässe
         </p>
-        <a href="#anfrage" class="cta-button">Jetzt Anfrage stellen</a>
+        <a href="#bestellen" class="cta-button">Jetzt bestellen</a>
       </div>
     </section>
 
     <!-- Trust Section -->
     <section class="trust-section">
-      <p class="trust-text">Vertrauen bereits u. a.</p>
+      <p class="trust-text">Referenzen</p>
       <div class="trust-logos">
-        <div class="trust-logo">Firma 1</div>
-        <div class="trust-logo">Firma 2</div>
-        <div class="trust-logo">Firma 3</div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section>
-      <h2 class="section-title">Galerie</h2>
-      <div class="gallery-grid">
-        <!-- TODO: Bildpfad für Weihnachtskarte ersetzen -->
-        <div class="gallery-item">
-          <div class="gallery-image">[Weihnachtskarte für Investoren]</div>
-          <div class="gallery-content">
-            <h3>Weihnachtskarte für Investoren mit Gravur</h3>
-            <p>
-              Persönliche Weihnachtsgrüße mit graviertem Logo für wichtige
-              Geschäftspartner
-            </p>
-          </div>
-        </div>
-        <!-- TODO: Bildpfad für Business-Karte ersetzen -->
-        <div class="gallery-item">
-          <div class="gallery-image">[Business-Karte zum Projektabschluss]</div>
-          <div class="gallery-content">
-            <h3>Business-Karte zum Projektabschluss</h3>
-            <p>
-              Danksagungskarte mit individuellem Design für erfolgreiche
-              Projektabschlüsse
-            </p>
-          </div>
-        </div>
-        <!-- TODO: Bildpfad für Minimalistische Blanko-Edition ersetzen -->
-        <div class="gallery-item">
-          <div class="gallery-image">[Minimalistische Blanko-Edition]</div>
-          <div class="gallery-content">
-            <h3>Minimalistische Blanko-Edition</h3>
-            <p>
-              Zeitloses Design für vielfältige Anlässe – elegant und vielseitig
-            </p>
-          </div>
-        </div>
-        <!-- TODO: Weitere Galeriebilder hinzufügen -->
-        <div class="gallery-item">
-          <div class="gallery-image">[Weitere Beispielkarte]</div>
-          <div class="gallery-content">
-            <h3>Individuelles Design</h3>
-            <p>Jede Karte wird nach Ihren Wünschen gestaltet und produziert</p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">[Weitere Beispielkarte]</div>
-          <div class="gallery-content">
-            <h3>Hochwertige Materialien</h3>
-            <p>
-              Premium-Holz oder Acryl für einen nachhaltigen, wertigen Eindruck
-            </p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">[Weitere Beispielkarte]</div>
-          <div class="gallery-content">
-            <h3>Präzise Gravur</h3>
-            <p>
-              Lasertechnik für detailreiche, dauerhafte Gravuren in höchster
-              Qualität
-            </p>
-          </div>
-        </div>
+        <img
+          src="media/jcr.png"
+          alt="Firma 1"
+          class="trust-logo"
+          style="width: 75%"
+        />
+        <img src="media/prequel.png" alt="Firma 1" class="trust-logo" />
+        <img src="media/dr-matzat.jpg" alt="Firma 1" class="trust-logo" />
       </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="pricing-section">
-      <h2 class="section-title">Preise</h2>
-      <p class="pricing-subtitle">
-        Inklusive Designvorschlag, Gravur und Versand (DE)
-      </p>
-      <table class="pricing-table">
-        <thead>
-          <tr>
-            <th>Menge</th>
-            <th>1 Logo</th>
-            <th>2 Logos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>5–9 Karten</td>
-            <td>12,00 €</td>
-            <td>13,50 €</td>
-          </tr>
-          <tr>
-            <td>10–24 Karten</td>
-            <td>9,90 €</td>
-            <td>11,50 €</td>
-          </tr>
-          <tr>
-            <td>25–49 Karten</td>
-            <td>8,50 €</td>
-            <td>9,90 €</td>
-          </tr>
-          <tr>
-            <td>50+</td>
-            <td>7,90 €</td>
-            <td>9,50 €</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2 class="section-title">Preis pro Karte</h2>
+      <div class="pricing-range-container">
+        <div class="pricing-range-main">
+          <div class="pricing-range-value">5–15 € netto</div>
+          <div class="pricing-range-note">
+            Der finale Preis hängt individuell von Ihrem Design, der Komplexität
+            der Gravierung und der Stückzahl ab. Gern erstellen wir Ihnen nach
+            Ihrer Anfrage ein Angebot für das Komplettpaket: Design, Herstellung
+            und Versand.
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Request/Configurator Section -->
-    <section id="anfrage" class="request-section">
-      <h2 class="section-title">Anfrage stellen</h2>
+    <section id="bestellen" class="request-section">
+      <h2 class="section-title">Jetzt bestellen</h2>
+      <p class="pricing-subtitle" style="margin-bottom: 40px; color: white">
+        Wählen Sie Ihre Kartenvariante – wir kümmern uns um den Rest
+      </p>
       <form class="request-form" id="request-form" action="#" method="POST">
-        <!-- TODO: Formular-Endpoint einfügen (FormSubmit, Netlify Forms, oder PHP) -->
         <input
           type="hidden"
           name="_subject"
-          value="Neue Anfrage von Laser Jungle Website"
+          value="Neue Bestellung von Laser Jungle Website"
         />
         <input type="hidden" name="_captcha" value="false" />
 
         <div class="form-group">
-          <label for="email">E-Mail-Adresse *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="ihre@email.de"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Kartendesign *</label>
+          <label>Kartenvariante wählen *</label>
           <div class="design-options">
-            <!-- TODO: Design-Auswahl mit echten Bildern verlinken -->
             <label class="design-option">
               <input
                 type="radio"
-                name="design"
-                value="weihnachten"
+                name="card-variant"
+                value="christmas-1"
                 required
-                data-price-1="12.00"
-                data-price-2="13.50"
+                tabindex="-1"
+                data-preview="media/cards/christmas-1.png"
               />
               <div class="design-option-content">
-                <div class="design-option-image">🎄</div>
-                <div class="design-option-label">Weihnachten</div>
+                <img
+                  src="media/cards/christmas-1.png"
+                  alt="Christmas mit 1 Logo"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Christmas • 1 Logo</div>
               </div>
             </label>
             <label class="design-option">
               <input
                 type="radio"
-                name="design"
-                value="business"
+                name="card-variant"
+                value="christmas-2"
                 required
-                data-price-1="12.00"
-                data-price-2="13.50"
+                tabindex="-1"
+                data-preview="media/cards/christmas-2.png"
               />
               <div class="design-option-content">
-                <div class="design-option-image">📈</div>
-                <div class="design-option-label">Business</div>
+                <img
+                  src="media/cards/christmas-2.png"
+                  alt="Christmas mit 2 Logos"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Christmas • 2 Logos</div>
               </div>
             </label>
             <label class="design-option">
               <input
                 type="radio"
-                name="design"
-                value="blanko"
+                name="card-variant"
+                value="blanko-1"
                 required
-                data-price-1="12.00"
-                data-price-2="13.50"
+                tabindex="-1"
+                data-preview="media/cards/blanko-1.png"
               />
               <div class="design-option-content">
-                <div class="design-option-image">🔲</div>
-                <div class="design-option-label">Blanko</div>
+                <img
+                  src="media/cards/blanko-1.png"
+                  alt="Blanko mit 1 Logo"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Blanko • 1 Logo</div>
               </div>
             </label>
+            <label class="design-option">
+              <input
+                type="radio"
+                name="card-variant"
+                value="blanko-2"
+                required
+                tabindex="-1"
+                data-preview="media/cards/blanko-2.png"
+              />
+              <div class="design-option-content">
+                <img
+                  src="media/cards/blanko-2.png"
+                  alt="Blanko mit 2 Logos"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Blanko • 2 Logos</div>
+              </div>
+            </label>
+          </div>
+          <!-- Vorschau -->
+          <div class="card-preview-container" id="card-preview">
+            <div class="card-preview-label">Ihre Auswahl</div>
+            <img
+              src=""
+              alt="Vorschau"
+              class="card-preview-image"
+              id="preview-image"
+            />
           </div>
         </div>
 
@@ -863,12 +917,36 @@
         </div>
 
         <div class="form-group">
-          <label for="logo-count">Logo-Auswahl *</label>
-          <select id="logo-count" name="logo-count" required>
-            <option value="">Bitte wählen</option>
-            <option value="1">1 Logo</option>
-            <option value="2">2 Logos</option>
-          </select>
+          <label for="heading">Überschrift *</label>
+          <input
+            type="text"
+            id="heading"
+            name="heading"
+            required
+            placeholder="z.B. Frohe Weihnachten"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Spruch / Nachricht *</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Ihre individuelle Nachricht oder Spruch für die Karte..."
+            rows="4"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-Mail-Adresse *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="ihre@email.de"
+          />
           <p
             style="
               font-size: 0.85rem;
@@ -876,33 +954,53 @@
               margin-top: 8px;
             "
           >
-            Hinweis: Logos werden nachträglich per E-Mail oder Google Drive-Link
-            ausgetauscht
+            Hinweis: Logos senden wir Ihnen nach Ihrer Bestellung per E-Mail zu,
+            damit Sie sie uns übermitteln können.
           </p>
         </div>
 
-        <div class="form-group">
-          <label for="message">Wunschtext / Spruch (optional)</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Ihre individuelle Nachricht oder Spruch für die Karte..."
-          ></textarea>
-        </div>
-
-        <!-- TODO: Preisvorschau via JS basierend auf Eingaben → Einzelpreis + Gesamtpreis -->
-        <div class="price-preview" id="price-preview" style="display: none">
-          <div class="price-preview-label">Preisvorschau</div>
-          <div class="price-preview-value" id="price-total">0,00 €</div>
-          <div class="price-preview-details">
-            <span id="price-per-unit">0,00 €</span> pro Stück
+        <!-- Preishinweis -->
+        <div
+          class="price-preview"
+          style="background: var(--light-green); border: 2px solid var(--sage)"
+        >
+          <div class="price-preview-label" style="color: var(--text-dark)">
+            💡 Preisinfo
+          </div>
+          <div
+            class="price-preview-details"
+            style="
+              color: var(--text-dark);
+              font-size: 0.95rem;
+              margin-top: 10px;
+            "
+          >
+            Basierend auf Ihren Angaben erstellen wir Ihnen gerne ein
+            individuelles Angebot. Die Preisrange liegt in der Regel zwischen
+            5–15 € netto pro Karte und hängt von Design, Stückzahl und
+            Komplexität ab. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
           </div>
         </div>
 
         <button type="submit" class="submit-button" id="submit-button">
-          Unverbindlich anfragen
+          Bestellung abschicken
         </button>
       </form>
+
+      <div style="text-align: center; margin-top: 40px">
+        <p style="color: white; font-size: 1rem; margin-bottom: 20px">
+          Haben Sie andere Wünsche oder Ideen? Wir freuen uns von Ihnen zu
+          hören!
+        </p>
+        <p style="color: white; font-size: 1rem; margin-bottom: 20px">
+          Kontaktieren Sie uns gerne unter
+          <a
+            href="mailto:hello@laser-jungle.com"
+            style="color: white; text-decoration: underline"
+            >hello@laser-jungle.com</a
+          >
+        </p>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -921,62 +1019,62 @@
     </footer>
 
     <script>
-      // Price Calculator
-      const priceTable = {
-        "5-9": { 1: 12.0, 2: 13.5 },
-        "10-24": { 1: 9.9, 2: 11.5 },
-        "25-49": { 1: 8.5, 2: 9.9 },
-        "50+": { 1: 7.9, 2: 9.5 },
-      };
+      // Card Preview Functionality
+      const cardVariantRadios = document.querySelectorAll(
+        'input[name="card-variant"]'
+      );
+      const previewContainer = document.getElementById("card-preview");
+      const previewImage = document.getElementById("preview-image");
+      const designOptions = document.querySelectorAll(".design-option");
 
-      function getPriceTier(quantity) {
-        if (quantity >= 50) return "50+";
-        if (quantity >= 25) return "25-49";
-        if (quantity >= 10) return "10-24";
-        return "5-9";
-      }
+      // Prevent page scroll when clicking on card options
+      let savedScrollPosition = null;
 
-      function calculatePrice() {
-        const quantityInput = document.getElementById("quantity");
-        const logoCountSelect = document.getElementById("logo-count");
-        const designRadios = document.querySelectorAll('input[name="design"]');
-        const pricePreview = document.getElementById("price-preview");
-        const priceTotal = document.getElementById("price-total");
-        const pricePerUnit = document.getElementById("price-per-unit");
+      designOptions.forEach((option) => {
+        option.addEventListener("mousedown", function (e) {
+          // Save scroll position before any scroll happens
+          savedScrollPosition = window.scrollY || window.pageYOffset;
+        });
 
-        const quantity = parseInt(quantityInput.value) || 0;
-        const logoCount = parseInt(logoCountSelect.value) || 0;
-        const designSelected = Array.from(designRadios).some(
-          (radio) => radio.checked
+        option.addEventListener(
+          "click",
+          function (e) {
+            // Prevent any scrolling by restoring position immediately
+            if (savedScrollPosition !== null) {
+              // Use requestAnimationFrame to ensure it happens after browser's scroll
+              requestAnimationFrame(() => {
+                window.scrollTo(0, savedScrollPosition);
+                requestAnimationFrame(() => {
+                  window.scrollTo(0, savedScrollPosition);
+                });
+              });
+            }
+          },
+          true
         );
+      });
 
-        if (quantity >= 5 && logoCount > 0 && designSelected) {
-          const tier = getPriceTier(quantity);
-          const unitPrice = priceTable[tier][logoCount];
-          const totalPrice = unitPrice * quantity;
+      // Also prevent scroll on focus events
+      cardVariantRadios.forEach((radio) => {
+        radio.addEventListener("focus", function (e) {
+          if (savedScrollPosition !== null) {
+            e.preventDefault();
+            window.scrollTo(0, savedScrollPosition);
+          }
+        });
+      });
 
-          priceTotal.textContent = totalPrice.toFixed(2) + " €";
-          pricePerUnit.textContent = unitPrice.toFixed(2) + " €";
-          pricePreview.style.display = "block";
-        } else {
-          pricePreview.style.display = "none";
-        }
-      }
-
-      // Event Listeners for Price Calculation
-      document
-        .getElementById("quantity")
-        .addEventListener("input", calculatePrice);
-      document
-        .getElementById("logo-count")
-        .addEventListener("change", calculatePrice);
-      document.querySelectorAll('input[name="design"]').forEach((radio) => {
-        radio.addEventListener("change", calculatePrice);
+      cardVariantRadios.forEach((radio) => {
+        radio.addEventListener("change", function () {
+          if (this.checked) {
+            const previewSrc = this.getAttribute("data-preview");
+            previewImage.src = previewSrc;
+            previewContainer.classList.add("active");
+          }
+        });
       });
 
       // Form Submission
-      // TODO: Formularverarbeitung → per E-Mail oder FormSubmit / Netlify / eigener Backend-Endpoint
-      // TODO: Nach Absenden individuelle Mailantwort mit Upload-Link / Google Drive erstellen
       document
         .getElementById("request-form")
         .addEventListener("submit", function (e) {
@@ -984,44 +1082,44 @@
 
           const formData = new FormData(this);
           const email = formData.get("email");
-          const design = formData.get("design");
+          const cardVariant = formData.get("card-variant");
           const quantity = formData.get("quantity");
-          const logoCount = formData.get("logo-count");
+          const heading = formData.get("heading");
           const message = formData.get("message");
 
-          // Calculate final price
-          const tier = getPriceTier(parseInt(quantity));
-          const unitPrice = priceTable[tier][parseInt(logoCount)];
-          const totalPrice = unitPrice * parseInt(quantity);
+          // Get variant name for display
+          const variantNames = {
+            "christmas-1": "Christmas • 1 Logo",
+            "christmas-2": "Christmas • 2 Logos",
+            "blanko-1": "Blanko • 1 Logo",
+            "blanko-2": "Blanko • 2 Logos",
+          };
+          const variantName = variantNames[cardVariant] || cardVariant;
 
           // Create email body
           const emailBody = `
-Neue Anfrage von Laser Jungle Website
+Neue Bestellung von Laser Jungle Website
 
 E-Mail: ${email}
-Design: ${design}
+Kartenvariante: ${variantName}
 Anzahl: ${quantity} Karten
-Logo-Anzahl: ${logoCount}
-Wunschtext: ${message || "(keine Angabe)"}
+Überschrift: ${heading}
+Spruch / Nachricht: ${message}
 
-Preisvorschau:
-Einzelpreis: ${unitPrice.toFixed(2)} €
-Gesamtpreis: ${totalPrice.toFixed(2)} €
+Bitte erstellen Sie ein individuelles Angebot basierend auf den Angaben.
+Preisrange: ca. 5–15 € netto pro Karte (hängt vom finalen Design ab).
         `.trim();
 
           // For now, use mailto (can be replaced with FormSubmit or other service)
-          const mailtoLink = `mailto:hello@laser-jungle.com?subject=Neue Anfrage - ${quantity} Karten&body=${encodeURIComponent(
+          const mailtoLink = `mailto:hello@laser-jungle.com?subject=Neue Bestellung - ${quantity} Karten - ${variantName}&body=${encodeURIComponent(
             emailBody
           )}`;
-
-          // TODO: Replace with actual form submission endpoint
-          // Example for FormSubmit: this.action = "https://formsubmit.co/your-email@example.com";
 
           window.location.href = mailtoLink;
 
           // Show success message
           alert(
-            "Vielen Dank für Ihre Anfrage! Sie werden weitergeleitet, um die E-Mail zu senden."
+            "Vielen Dank für Ihre Bestellung! Sie werden weitergeleitet, um die E-Mail zu senden."
           );
         });
 

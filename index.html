@@ -59,10 +59,10 @@
         margin-bottom: 20px;
       }
 
-      .leaf-icon {
-        width: 40px;
-        height: 40px;
-        fill: var(--sticker-dark);
+      .logo-image {
+        height: 150px;
+        width: auto;
+        object-fit: contain;
       }
 
       .logo-text {
@@ -123,6 +123,7 @@
       }
 
       .section-background {
+        filter: brightness(60%);
         position: absolute;
         top: 0;
         left: 0;
@@ -317,67 +318,21 @@
     <!-- Header with Logo -->
     <header class="header">
       <div class="logo-container">
-        <svg
-          class="leaf-icon"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-            fill="none"
-          />
-          <path
-            d="M12 2L2 12l10 10 10-10L12 2zm0 3.5L18.5 12 12 18.5 5.5 12 12 5.5z"
-            fill="currentColor"
-            opacity="0.1"
-          />
-          <path
-            d="M12 2c-2.5 0-4.5 2-4.5 4.5S9.5 11 12 11s4.5-2 4.5-4.5S14.5 2 12 2zm0 7c-1.38 0-2.5-1.12-2.5-2.5S10.62 4 12 4s2.5 1.12 2.5 2.5S13.38 9 12 9z"
-            fill="currentColor"
-          />
-        </svg>
-        <h1 class="logo-text">Laser Jungle</h1>
+        <img
+          src="media/laser-jungle-logo.png"
+          alt="Laser Jungle Logo"
+          class="logo-image"
+        />
       </div>
-      <p class="tagline">Personalisierte Laser-Designs für jeden Anlass</p>
+      <p class="tagline">Personalisierte Laser-Designs mit ♥️</p>
     </header>
 
     <!-- Main Sections -->
     <div class="main-sections">
-      <!-- B2C Section -->
-      <a
-        href="https://www.etsy.com/shop/laserjungle"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="section-card b2c-card"
-        id="b2c-link"
-      >
-        <img
-          src="routineplaner.jpg"
-          alt="Routineplaner"
-          class="section-background"
-          onerror="this.style.display='none'"
-        />
-        <div class="section-content">
-          <h2 class="section-title">Für Privatkunden</h2>
-          <p class="section-subtitle">
-            Personalisierte Laser-Designs mit Liebe gemacht – für dich und deine
-            Liebsten
-          </p>
-          <ul class="section-features">
-            <li>Routineplaner & Organizer</li>
-            <li>Adventskalender</li>
-            <li>Geburtstagstorten & Geschenke</li>
-            <li>Individuelle Designs mit &lt;3</li>
-            <li>Vieles mehr für den Alltag</li>
-          </ul>
-          <span class="section-cta">Zum Etsy Shop →</span>
-        </div>
-      </a>
-
       <!-- B2B Section -->
       <a href="corporate.html" class="section-card b2b-card">
         <img
-          src="corporate-design.jpg"
+          src="media/B2B-background.JPG"
           alt="Corporate Laser Designs"
           class="section-background"
           onerror="this.style.display='none'"
@@ -396,6 +351,37 @@
             <li>Hochwertige Materialien</li>
           </ul>
           <span class="section-cta">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- B2C Section -->
+      <a
+        href="https://www.etsy.com/shop/laserjungle"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="section-card b2c-card"
+        id="b2c-link"
+      >
+        <img
+          src="media/B2C-background.JPG"
+          alt="Routineplaner"
+          class="section-background"
+          onerror="this.style.display='none'"
+        />
+        <div class="section-content">
+          <h2 class="section-title">Für Privatkunden</h2>
+          <p class="section-subtitle">
+            Personalisierte Laser-Designs mit Liebe gemacht – für dich und deine
+            Liebsten
+          </p>
+          <ul class="section-features">
+            <li>Routineplaner & Organizer</li>
+            <li>Adventskalender</li>
+            <li>Geburtstagstorten & Geschenke</li>
+            <li>Individuelle Designs mit &lt;3</li>
+            <li>Vieles mehr für den Alltag</li>
+          </ul>
+          <span class="section-cta">Zum Etsy Shop →</span>
         </div>
       </a>
     </div>
