@@ -1061,35 +1061,61 @@
         style="
           text-align: center;
           margin-top: 50px;
-          padding: 30px;
-          background: rgba(255, 255, 255, 0.6);
-          border-radius: 12px;
-          backdrop-filter: blur(10px);
+          padding: 40px 30px;
+          background: linear-gradient(
+            135deg,
+            var(--sage) 0%,
+            var(--light-green) 100%
+          );
+          border-radius: 16px;
+          border: 3px solid var(--accent);
+          box-shadow: 0 8px 24px var(--shadow-medium);
         "
       >
         <p
           style="
             color: var(--text-dark);
-            font-size: 1rem;
-            margin-bottom: 15px;
-            font-weight: 500;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.4;
           "
         >
-          Haben Sie andere Wünsche oder Ideen? Wir freuen uns von Ihnen zu
-          hören!
+          💬 Andere Karten, andere Designs oder ganz eigene Ideen?
         </p>
-        <p style="color: var(--text-dark); font-size: 1rem; margin-bottom: 0">
-          Kontaktieren Sie uns gerne unter
-          <a
-            href="mailto:hello@laser-jungle.com"
-            style="
-              color: var(--accent-dark);
-              text-decoration: underline;
-              font-weight: 500;
-            "
-            >hello@laser-jungle.com</a
-          >
+        <p
+          style="
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Wenn Sie andere Karten, andere Designs oder ganz eigene Ideen (auch
+          über die Karten hinaus) haben, schreiben Sie uns gerne eine E-Mail!
         </p>
+        <a
+          href="mailto:hello@laser-jungle.com"
+          style="
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px var(--shadow-soft);
+          "
+          onmouseover="this.style.background='var(--accent-dark)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px var(--shadow-medium)'"
+          onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px var(--shadow-soft)'"
+          >📧 hello@laser-jungle.com</a
+        >
       </div>
     </section>
 
