@@ -182,7 +182,7 @@
       /* Trust Section */
       .trust-section {
         background: white;
-        padding: 60px 20px;
+        padding: 80px 20px;
         text-align: center;
       }
 
@@ -208,9 +208,9 @@
         width: 100%;
         height: auto;
         object-fit: contain;
-        opacity: 0.7;
+        opacity: 0.8;
         filter: grayscale(100%);
-        transition: opacity 0.3s ease, filter 0.3s ease;
+        transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
         padding: 20px;
         background: white;
         border-radius: 12px;
@@ -273,7 +273,25 @@
 
       /* Pricing Section */
       .pricing-section {
-        background: white;
+        background: var(--beige);
+        padding: 100px 20px;
+        box-shadow: 0 -4px 20px var(--shadow-soft);
+        position: relative;
+      }
+
+      .pricing-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--sand),
+          transparent
+        );
       }
 
       .pricing-subtitle {
@@ -289,11 +307,15 @@
       .pricing-range-container {
         max-width: 800px;
         margin: 0 auto;
-        background: var(--beige);
+        background: linear-gradient(
+          135deg,
+          var(--light-green) 0%,
+          var(--beige) 100%
+        );
         border-radius: 16px;
         padding: 50px 40px;
-        box-shadow: 0 6px 24px var(--shadow-soft);
-        border: 1px solid var(--sand);
+        box-shadow: 0 8px 32px var(--shadow-medium);
+        border: 2px solid var(--sage);
       }
 
       .pricing-range-main {
@@ -371,11 +393,39 @@
 
       /* Request/Configurator Section */
       .request-section {
-        background: var(--light-green);
+        background: linear-gradient(
+          135deg,
+          var(--sage) 0%,
+          var(--light-green) 50%,
+          var(--beige) 100%
+        );
+        padding: 100px 20px;
+        position: relative;
+      }
+
+      .request-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--sand),
+          transparent
+        );
+      }
+
+      .request-section .section-title {
+        color: var(--text-dark);
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
       }
 
       .request-section .pricing-subtitle {
-        color: white;
+        color: var(--text-dark);
+        font-weight: 500;
       }
 
       .request-form {
@@ -805,7 +855,7 @@
     <!-- Request/Configurator Section -->
     <section id="bestellen" class="request-section">
       <h2 class="section-title">Jetzt bestellen</h2>
-      <p class="pricing-subtitle" style="margin-bottom: 40px; color: white">
+      <p class="pricing-subtitle" style="margin-bottom: 40px">
         Wählen Sie Ihre Kartenvariante – wir kümmern uns um den Rest
       </p>
       <form class="request-form" id="request-form" action="#" method="POST">
@@ -987,16 +1037,36 @@
         </button>
       </form>
 
-      <div style="text-align: center; margin-top: 40px">
-        <p style="color: white; font-size: 1rem; margin-bottom: 20px">
+      <div
+        style="
+          text-align: center;
+          margin-top: 50px;
+          padding: 30px;
+          background: rgba(255, 255, 255, 0.6);
+          border-radius: 12px;
+          backdrop-filter: blur(10px);
+        "
+      >
+        <p
+          style="
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+          "
+        >
           Haben Sie andere Wünsche oder Ideen? Wir freuen uns von Ihnen zu
           hören!
         </p>
-        <p style="color: white; font-size: 1rem; margin-bottom: 20px">
+        <p style="color: var(--text-dark); font-size: 1rem; margin-bottom: 0">
           Kontaktieren Sie uns gerne unter
           <a
             href="mailto:hello@laser-jungle.com"
-            style="color: white; text-decoration: underline"
+            style="
+              color: var(--accent-dark);
+              text-decoration: underline;
+              font-weight: 500;
+            "
             >hello@laser-jungle.com</a
           >
         </p>
