@@ -876,13 +876,20 @@
       <p class="pricing-subtitle" style="margin-bottom: 40px">
         Wählen Sie Ihre Kartenvariante – wir kümmern uns um den Rest
       </p>
-      <form class="request-form" id="request-form" action="#" method="POST">
+      <form
+        class="request-form"
+        id="request-form"
+        action="https://formsubmit.co/kevreuss@gmail.com"
+        method="POST"
+      >
         <input
           type="hidden"
           name="_subject"
           value="Neue Bestellung von Laser Jungle Website"
         />
         <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="" />
+        <input type="hidden" name="_template" value="table" />
 
         <div class="form-group">
           <label>Kartenvariante wählen *</label>
@@ -1212,31 +1219,73 @@
           };
           const variantName = variantNames[cardVariant] || cardVariant;
 
-          // Create email body
-          const emailBody = `
-Neue Bestellung von Laser Jungle Website
+          // Format card variant name for email
+          formData.set("card-variant", variantName);
 
-E-Mail: ${email}
-Kartenvariante: ${variantName}
-Anzahl: ${quantity} Karten
-Überschrift: ${heading}
-Spruch / Nachricht: ${message}
+          // Set the _next parameter to current page to prevent redirect
+          const currentUrl = window.location.href.split("#")[0];
+          formData.set("_next", currentUrl + "#bestellen");
 
-Bitte erstellen Sie ein individuelles Angebot basierend auf den Angaben.
-Preisrange: ca. 5–15 € netto pro Karte (hängt vom finalen Design ab).
-        `.trim();
+          // Disable submit button
+          const submitButton = document.getElementById("submit-button");
+          submitButton.disabled = true;
+          submitButton.textContent = "Wird gesendet...";
 
-          // For now, use mailto (can be replaced with FormSubmit or other service)
-          const mailtoLink = `mailto:hello@laser-jungle.com?subject=Neue Bestellung - ${quantity} Karten - ${variantName}&body=${encodeURIComponent(
-            emailBody
-          )}`;
+          // Submit form to FormSubmit
+          fetch("https://formsubmit.co/ajax/kevreuss@gmail.com", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Show success message
+              submitButton.textContent = "✓ Bestellung erfolgreich gesendet!";
+              submitButton.style.background = "var(--sage)";
 
-          window.location.href = mailtoLink;
+              // Create success message
+              const successMessage = document.createElement("div");
+              successMessage.style.cssText = `
+                background: var(--light-green);
+                border: 2px solid var(--sage);
+                border-radius: 12px;
+                padding: 30px;
+                margin-top: 30px;
+                text-align: center;
+                box-shadow: 0 4px 16px var(--shadow-soft);
+              `;
+              successMessage.innerHTML = `
+                <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 15px; font-weight: 600;">
+                  ✓ Bestellung erfolgreich übermittelt!
+                </h3>
+                <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.6;">
+                  Vielen Dank für Ihre Bestellung! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.
+                </p>
+              `;
 
-          // Show success message
-          alert(
-            "Vielen Dank für Ihre Bestellung! Sie werden weitergeleitet, um die E-Mail zu senden."
-          );
+              // Insert success message after form
+              const form = document.getElementById("request-form");
+              form.parentNode.insertBefore(successMessage, form.nextSibling);
+
+              // Reset form
+              form.reset();
+              previewContainer.classList.remove("active");
+
+              // Scroll to success message
+              setTimeout(() => {
+                successMessage.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }, 100);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              submitButton.disabled = false;
+              submitButton.textContent = "Bestellung abschicken";
+              alert(
+                "Es gab einen Fehler beim Senden Ihrer Bestellung. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail."
+              );
+            });
         });
 
       // Smooth scroll for anchor links
