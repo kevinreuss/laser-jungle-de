@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <!-- Hotjar Tracking Code for laser-jungle.com -->
     <script>
@@ -21,9 +21,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Laser Jungle – Personalisierte Laser-Designs für Privatkunden und Unternehmen. Routineplaner, Adventskalender, Weihnachtskarten und individuelle Anfertigungen."
+      content="Individually laser-engraved cards for customers, partners & investors. Personal, high-quality, with logo and message – for special business occasions."
     />
-    <title>Laser Jungle – Personalisierte Laser-Designs</title>
+    <title>Corporate Laser Designs – Laser Jungle</title>
     <style>
       * {
         margin: 0;
@@ -42,8 +42,6 @@
         --accent-dark: #6b7a5f;
         --shadow-soft: rgba(0, 0, 0, 0.06);
         --shadow-medium: rgba(0, 0, 0, 0.12);
-        --sticker-gray: #e8e8e8;
-        --sticker-dark: #4a4a4a;
       }
 
       body {
@@ -55,184 +53,602 @@
         -webkit-font-smoothing: antialiased;
       }
 
-      /* Header/Logo Section */
-      .header {
-        text-align: center;
-        padding: 60px 20px 40px;
+      /* Navigation */
+      .nav {
+        background: white;
+        padding: 10px;
+        box-shadow: 0 2px 8px var(--shadow-soft);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text-dark);
+      }
+
+      .nav-logo img {
+        height: 64px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .nav-logo-text {
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .nav-link {
+        color: var(--text-medium);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--accent);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: linear-gradient(
           135deg,
           var(--light-green) 0%,
           var(--beige) 50%,
           var(--sand) 100%
         );
+        padding: 100px 20px 80px;
+        text-align: center;
       }
 
-      .logo-container {
-        display: inline-flex;
+      .hero-content {
+        max-width: 1000px;
+        z-index: 1;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 700px;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 24px 48px var(--shadow-medium);
+        margin: 0 auto 50px;
+        background: linear-gradient(135deg, var(--sage), var(--light-green));
+        display: flex;
         align-items: center;
         justify-content: center;
-        gap: 16px;
-        margin-bottom: 20px;
+        color: var(--text-medium);
+        font-size: 1.1rem;
       }
 
-      .logo-image {
-        height: 150px;
-        width: auto;
-        object-fit: contain;
-      }
-
-      .logo-text {
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 700;
+      .hero h1 {
+        font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+        font-weight: 600;
+        margin-bottom: 24px;
         color: var(--text-dark);
         letter-spacing: -0.02em;
+        line-height: 1.2;
       }
 
-      .tagline {
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
+      .hero .subtitle {
+        font-size: clamp(1.15rem, 2.8vw, 1.5rem);
         color: var(--text-medium);
+        margin-bottom: 48px;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
         font-weight: 400;
       }
 
-      /* Main Sections Container */
-      .main-sections {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 60px 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-
-      /* Section Card */
-      .section-card {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 8px 32px var(--shadow-soft);
-        transition: all 0.4s ease;
-        cursor: pointer;
+      .cta-button {
+        display: inline-block;
+        padding: 18px 40px;
+        background: var(--accent);
+        color: white;
         text-decoration: none;
-        color: inherit;
-        display: block;
-        min-height: 500px;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 1.15rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px var(--shadow-soft);
+        border: none;
+        cursor: pointer;
       }
 
-      .section-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 16px 48px var(--shadow-medium);
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px var(--shadow-medium);
+        background: var(--accent-dark);
       }
 
-      .section-card::before {
+      /* Section Styling */
+      section {
+        padding: 100px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+        font-weight: 600;
+        margin-bottom: 24px;
+        text-align: center;
+        color: var(--text-dark);
+        letter-spacing: -0.01em;
+      }
+
+      /* Trust Section */
+      .trust-section {
+        background: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .trust-text {
+        font-size: 1rem;
+        color: var(--text-medium);
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+      }
+
+      .trust-logos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .trust-logo {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        opacity: 0.8;
+        filter: grayscale(100%);
+        transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+      }
+
+      .trust-logo:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+      }
+
+      /* Gallery Section */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .gallery-item {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 6px 24px var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 36px var(--shadow-medium);
+      }
+
+      .gallery-image {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        background: linear-gradient(135deg, var(--sage), var(--light-green));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-medium);
+        font-size: 0.95rem;
+      }
+
+      .gallery-content {
+        padding: 28px;
+      }
+
+      .gallery-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--text-dark);
+        font-weight: 500;
+      }
+
+      .gallery-content p {
+        color: var(--text-medium);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Pricing Section */
+      .pricing-section {
+        background: var(--beige);
+        padding: 100px 20px;
+        box-shadow: 0 -4px 20px var(--shadow-soft);
+        position: relative;
+      }
+
+      .pricing-section::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        height: 1px;
         background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.1) 0%,
-          rgba(0, 0, 0, 0.4) 100%
+          to right,
+          transparent,
+          var(--sand),
+          transparent
         );
-        z-index: 1;
       }
 
-      .section-background {
-        filter: brightness(60%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background: linear-gradient(135deg, var(--sage), var(--light-green));
+      .pricing-subtitle {
+        text-align: center;
+        color: var(--text-medium);
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .section-content {
-        position: relative;
-        z-index: 2;
+      .pricing-range-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: linear-gradient(
+          135deg,
+          var(--light-green) 0%,
+          var(--beige) 100%
+        );
+        border-radius: 16px;
         padding: 50px 40px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        color: white;
+        box-shadow: 0 8px 32px var(--shadow-medium);
+        border: 2px solid var(--sage);
       }
 
-      .section-title {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        font-weight: 600;
-        margin-bottom: 16px;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      }
-
-      .section-subtitle {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        margin-bottom: 24px;
-        opacity: 0.95;
-        line-height: 1.6;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .section-features {
-        list-style: none;
+      .pricing-range-main {
+        text-align: center;
         margin-bottom: 30px;
       }
 
-      .section-features li {
-        font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-        margin-bottom: 10px;
-        padding-left: 24px;
-        position: relative;
-        opacity: 0.9;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      .pricing-range-label {
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        margin-bottom: 15px;
       }
 
-      .section-features li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
+      .pricing-range-value {
+        font-size: 2.5rem;
         font-weight: 600;
-        color: var(--light-green);
-      }
-
-      .section-cta {
-        display: inline-block;
-        padding: 14px 32px;
-        background: white;
         color: var(--text-dark);
-        text-decoration: none;
-        border-radius: 10px;
-        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .pricing-range-note {
+        font-size: 1rem;
+        color: var(--text-medium);
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+
+      .pricing-factors {
+        border-top: 1px solid var(--sand);
+        padding-top: 30px;
+      }
+
+      .pricing-factors-title {
         font-size: 1.1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-        align-self: flex-start;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        text-align: center;
       }
 
-      .section-cta:hover {
-        background: var(--light-green);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+      .pricing-factors-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        list-style: none;
       }
 
-      /* B2C Section Specific */
-      .b2c-card {
+      .pricing-factor-item {
+        background: var(--beige);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .pricing-factor-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .pricing-factor-label {
+        font-weight: 500;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+      }
+
+      .pricing-factor-desc {
+        font-size: 0.85rem;
+        color: var(--text-medium);
+        line-height: 1.5;
+      }
+
+      /* Request/Configurator Section */
+      .request-section {
         background: linear-gradient(
           135deg,
           var(--sage) 0%,
-          var(--light-green) 100%
+          var(--light-green) 50%,
+          var(--beige) 100%
+        );
+        padding: 100px 20px;
+        position: relative;
+      }
+
+      .request-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--sand),
+          transparent
         );
       }
 
-      /* B2B Section Specific */
-      .b2b-card {
-        background: linear-gradient(
-          135deg,
-          var(--accent) 0%,
-          var(--accent-dark) 100%
-        );
+      .request-section .section-title {
+        color: var(--text-dark);
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+      }
+
+      .request-section .pricing-subtitle {
+        color: var(--text-dark);
+        font-weight: 500;
+      }
+
+      .request-form {
+        background: white;
+        padding: 50px 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px var(--shadow-soft);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 28px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 500;
+        color: var(--text-dark);
+        font-size: 1rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 14px 18px;
+        border: 2px solid var(--sand);
+        border-radius: 10px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.3s ease;
+        background: var(--beige);
+        color: var(--text-dark);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: white;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .design-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 15px;
+      }
+
+      .design-option {
+        position: relative;
+        cursor: pointer;
+        border: 3px solid var(--sand);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: var(--beige);
+      }
+
+      .design-option:hover {
+        border-color: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px var(--shadow-soft);
+      }
+
+      .design-option:has(input[type="radio"]:checked) {
+        border-color: var(--accent);
+        border-width: 3px;
+        background: var(--light-green);
+      }
+
+      .design-option:has(input[type="radio"]:checked) .design-option-content {
+        background: transparent;
+      }
+
+      .design-option input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+      }
+
+      .design-option label {
+        cursor: pointer;
+      }
+
+      .design-option-content {
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .design-option-image {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        background: white;
+        border: 1px solid var(--sand);
+        padding: 8px;
+      }
+
+      .design-option-label {
+        font-weight: 500;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        margin-top: 8px;
+      }
+
+      .card-preview-container {
+        margin-top: 30px;
+        padding: 30px;
+        background: var(--beige);
+        border-radius: 12px;
+        border: 2px dashed var(--sand);
+        text-align: center;
+        display: none;
+      }
+
+      .card-preview-container.active {
+        display: block;
+      }
+
+      .card-preview-label {
+        font-size: 0.9rem;
+        color: var(--text-medium);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .card-preview-image {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px var(--shadow-soft);
+        background: white;
+        padding: 15px;
+        margin: 0 auto;
+      }
+
+      .price-preview {
+        background: var(--sage);
+        padding: 24px;
+        border-radius: 12px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .price-preview-label {
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+      }
+
+      .price-preview-value {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .price-preview-details {
+        font-size: 0.9rem;
+        color: var(--text-medium);
+        margin-top: 8px;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 18px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.15rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 30px;
+        box-shadow: 0 4px 16px var(--shadow-soft);
+      }
+
+      .submit-button:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px var(--shadow-medium);
+      }
+
+      .submit-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
       }
 
       /* Footer */
@@ -241,7 +657,6 @@
         color: rgba(255, 255, 255, 0.85);
         padding: 60px 20px 40px;
         text-align: center;
-        margin-top: 80px;
       }
 
       .footer-content {
@@ -275,47 +690,109 @@
       }
 
       /* Responsive */
-      @media (max-width: 968px) {
-        .main-sections {
+      @media (max-width: 768px) {
+        .nav-content {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .hero {
+          min-height: 70vh;
+          padding: 60px 15px 50px;
+        }
+
+        .hero-image {
+          height: 300px;
+          margin-bottom: 40px;
+        }
+
+        section {
+          padding: 70px 15px;
+        }
+
+        .trust-logos {
           grid-template-columns: 1fr;
           gap: 30px;
-          padding: 40px 20px;
+          max-width: 400px;
         }
 
-        .section-card {
-          min-height: 450px;
+        .trust-logo {
+          padding: 15px;
         }
 
-        .header {
-          padding: 50px 20px 30px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .main-sections {
-          padding: 30px 15px;
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          margin-top: 40px;
         }
 
-        .section-content {
-          padding: 40px 30px;
+        .pricing-range-container {
+          padding: 35px 25px;
         }
 
-        .section-card {
-          min-height: 400px;
+        .pricing-range-value {
+          font-size: 2rem;
         }
 
-        .header {
-          padding: 40px 15px 20px;
+        .pricing-factors-list {
+          grid-template-columns: 1fr;
+        }
+
+        .request-form {
+          padding: 35px 25px;
+        }
+
+        .design-options {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .card-preview-container {
+          padding: 20px;
+        }
+
+        .card-preview-image {
+          max-width: 100%;
         }
       }
 
       @media (max-width: 480px) {
-        .section-content {
+        .hero {
+          min-height: 60vh;
+          padding: 40px 10px 30px;
+        }
+
+        .hero-image {
+          height: 250px;
+          margin-bottom: 30px;
+        }
+
+        section {
+          padding: 50px 10px;
+        }
+
+        .pricing-range-container {
           padding: 30px 20px;
         }
 
-        .section-card {
-          min-height: 350px;
+        .pricing-range-value {
+          font-size: 1.8rem;
+        }
+
+        .pricing-range-note {
+          font-size: 0.95rem;
+        }
+
+        .request-form {
+          padding: 30px 20px;
+        }
+
+        .design-options {
+          grid-template-columns: 1fr;
+        }
+
+        .card-preview-container {
+          padding: 15px;
         }
 
         .footer-links {
@@ -331,90 +808,528 @@
     </style>
   </head>
   <body>
-    <!-- Header with Logo -->
-    <header class="header">
-      <div class="logo-container">
-        <img
-          src="media/laser-jungle-logo.png"
-          alt="Laser Jungle Logo"
-          class="logo-image"
-        />
+    <!-- Navigation -->
+    <!-- <nav class="nav">
+      <div class="nav-content">
+        <a href="index.html" class="nav-logo">
+          <img src="media/laser-jungle-logo.png" alt="Laser Jungle Logo" />
+        </a>
+        Laser Jungle - Corporate Laser Designs
+        <a href="index.html" class="nav-link">← Back to Homepage</a>
       </div>
-      <p class="tagline">Personalisierte Laser-Designs mit ♥️</p>
-    </header>
+    </nav> -->
 
-    <!-- Main Sections -->
-    <div class="main-sections">
-      <!-- B2B Section -->
-      <a href="corporate.html" class="section-card b2b-card">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
         <img
           src="media/B2B-background.JPG"
           alt="Corporate Laser Designs"
-          class="section-background"
-          onerror="this.style.display='none'"
+          class="hero-image"
         />
-        <div class="section-content">
-          <h2 class="section-title">Corporate Laser Designs</h2>
-          <p class="section-subtitle">
-            Personalisierte Designs für Weihnachtskarten, Grußkarten,
-            individuelle Anfertigungen und Projekte
-          </p>
-          <ul class="section-features">
-            <li>Weihnachtskarten mit Logo</li>
-            <li>Business-Grußkarten</li>
-            <li>Individuelle Anfertigungen</li>
-            <li>Projektbezogene Designs</li>
-            <li>Hochwertige Materialien</li>
-          </ul>
-          <span class="section-cta">Mehr erfahren →</span>
-        </div>
-      </a>
+        <h1>
+          Individually laser-engraved cards for customers, partners, employees &
+          more
+        </h1>
+        <p class="subtitle">
+          Personal, high-quality, with logo and message - for Christmas, thank
+          you notes, invitations and all special business occasions
+        </p>
+        <p class="subtitle" style="font-weight: 600">
+          Handcrafted in Germany. Fast shipping across Europe.
+        </p>
+        <a href="#bestellen" class="cta-button">Order now</a>
+      </div>
+    </section>
 
-      <!-- B2C Section -->
-      <a
-        href="https://www.etsy.com/shop/laserjungle"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="section-card b2c-card"
-        id="b2c-link"
-      >
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <p class="trust-text">Customers</p>
+      <div class="trust-logos">
         <img
-          src="media/B2C-background.JPG"
-          alt="Routineplaner"
-          class="section-background"
-          onerror="this.style.display='none'"
+          src="media/jcr.png"
+          alt="Firma 1"
+          class="trust-logo"
+          style="width: 75%"
         />
-        <div class="section-content">
-          <h2 class="section-title">Für Privatkunden</h2>
-          <p class="section-subtitle">
-            Personalisierte Laser-Designs mit Liebe gemacht – für dich und deine
-            Liebsten
-          </p>
-          <ul class="section-features">
-            <li>Routineplaner & Organizer</li>
-            <li>Adventskalender</li>
-            <li>Geburtstagstorten & Geschenke</li>
-            <li>Individuelle Designs mit &lt;3</li>
-            <li>Vieles mehr für den Alltag</li>
-          </ul>
-          <span class="section-cta">Zum Etsy Shop →</span>
+
+        <!-- <img class="trust-logo" /> -->
+        <img src="media/prequel.png" alt="Firma 1" class="trust-logo" />
+        <img src="media/dr-matzat.jpg" alt="Firma 1" class="trust-logo" />
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+      <h2 class="section-title">Price per Card</h2>
+      <div class="pricing-range-container">
+        <div class="pricing-range-main">
+          <div class="pricing-range-value">€5–15 net</div>
+          <div class="pricing-range-note">
+            The final price depends individually on your design, the complexity
+            of the engraving and the quantity. We will be happy to create a
+            quote for the complete package after your inquiry: design,
+            production and shipping.
+          </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </section>
+
+    <!-- Request/Configurator Section -->
+    <section id="bestellen" class="request-section">
+      <h2 class="section-title">Order now</h2>
+      <p class="pricing-subtitle" style="margin-bottom: 40px">
+        Choose your card variant – we'll take care of the rest
+      </p>
+      <form
+        class="request-form"
+        id="request-form"
+        action="https://formsubmit.co/75996bb89baec89e0444f5036d97d134"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Order from Laser Jungle Website"
+        />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div class="form-group">
+          <label>Choose card variant *</label>
+          <div class="design-options">
+            <label class="design-option">
+              <input
+                type="radio"
+                name="card-variant"
+                value="blanko-1"
+                required
+                tabindex="-1"
+                data-preview="media/cards/blanko-1.png"
+              />
+              <div class="design-option-content">
+                <img
+                  src="media/cards/blanko-1.png"
+                  alt="Blanko mit 1 Logo"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Neutral Design • 1 Logo</div>
+              </div>
+            </label>
+            <label class="design-option">
+              <input
+                type="radio"
+                name="card-variant"
+                value="blanko-2"
+                required
+                tabindex="-1"
+                data-preview="media/cards/blanko-2.png"
+              />
+              <div class="design-option-content">
+                <img
+                  src="media/cards/blanko-2.png"
+                  alt="Blanko mit 2 Logos"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Neutral Design • 2 Logos</div>
+              </div>
+            </label>
+            <label class="design-option">
+              <input
+                type="radio"
+                name="card-variant"
+                value="christmas-1"
+                required
+                tabindex="-1"
+                data-preview="media/cards/christmas-1.png"
+              />
+              <div class="design-option-content">
+                <img
+                  src="media/cards/christmas-1.png"
+                  alt="Christmas mit 1 Logo"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Christmas • 1 Logo</div>
+              </div>
+            </label>
+            <label class="design-option">
+              <input
+                type="radio"
+                name="card-variant"
+                value="christmas-2"
+                required
+                tabindex="-1"
+                data-preview="media/cards/christmas-2.png"
+              />
+              <div class="design-option-content">
+                <img
+                  src="media/cards/christmas-2.png"
+                  alt="Christmas mit 2 Logos"
+                  class="design-option-image"
+                />
+                <div class="design-option-label">Christmas • 2 Logos</div>
+              </div>
+            </label>
+          </div>
+          <!-- Vorschau -->
+          <div class="card-preview-container" id="card-preview">
+            <div class="card-preview-label">Your Selection</div>
+            <img
+              src=""
+              alt="Vorschau"
+              class="card-preview-image"
+              id="preview-image"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Number of Cards *</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="5"
+            required
+            placeholder="e.g. 20"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="heading">Heading *</label>
+          <input
+            type="text"
+            id="heading"
+            name="heading"
+            required
+            placeholder="e.g. Merry Christmas"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message / Quote *</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Your individual message or quote for the card..."
+            rows="4"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="your@email.com"
+          />
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--text-medium);
+              margin-top: 8px;
+            "
+          >
+            Note: We will send you an email after your order with instructions
+            on how to submit your logos to us.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="remarks"
+            >Remarks (we can customize <b>EVERYTHING</b> to fit your
+            needs)</label
+          >
+          <textarea
+            id="remarks"
+            name="remarks"
+            placeholder="Another design, shape, color, size, material, etc.? You can share everything with us here..."
+            rows="4"
+          ></textarea>
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--text-medium);
+              margin-top: 8px;
+            "
+          >
+            Optional: Here you can share additional information, ideas or
+            special requests with us.
+          </p>
+        </div>
+
+        <!-- Preishinweis -->
+        <div
+          class="price-preview"
+          style="background: var(--light-green); border: 2px solid var(--sage)"
+        >
+          <div class="price-preview-label" style="color: var(--text-dark)">
+            💡 Price Information
+          </div>
+          <div
+            class="price-preview-details"
+            style="
+              color: var(--text-dark);
+              font-size: 0.95rem;
+              margin-top: 10px;
+            "
+          >
+            Based on your information, we will be happy to create a personalized
+            quote for you. The price range is typically between €5–15 net per
+            card and depends on design, quantity and complexity. We will contact
+            you within 24 hours.
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button" id="submit-button">
+          Submit Order
+        </button>
+      </form>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 50px;
+          padding: 40px 30px;
+          background: linear-gradient(
+            135deg,
+            var(--sage) 0%,
+            var(--light-green) 100%
+          );
+          border-radius: 16px;
+          border: 3px solid var(--accent);
+          box-shadow: 0 8px 24px var(--shadow-medium);
+        "
+      >
+        <p
+          style="
+            color: var(--text-dark);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+          "
+        >
+          💬 Other cards, other designs or completely custom ideas?
+        </p>
+        <p
+          style="
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          If you have other cards, other designs or completely custom ideas
+          (even beyond cards), please feel free to send us an email!
+        </p>
+        <a
+          href="mailto:hello@laser-jungle.com"
+          style="
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px var(--shadow-soft);
+          "
+          onmouseover="this.style.background='var(--accent-dark)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px var(--shadow-medium)'"
+          onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px var(--shadow-soft)'"
+          >📧 hello@laser-jungle.com</a
+        >
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer>
       <div class="footer-content">
         <div class="footer-links">
-          <a href="index.html">Startseite</a>
-          <a href="corporate.html">Corporate</a>
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
+          <!-- <a href="index.html">Homepage</a> -->
+          <!-- <a href="corporate.html">Corporate</a> -->
+          <a href="impressum.html">Legal Notice</a>
+          <a href="datenschutz.html">Privacy Policy</a>
         </div>
         <p style="margin-top: 30px; font-size: 0.9rem">
           &copy; 2025 Laser Jungle
         </p>
       </div>
     </footer>
+
+    <script>
+      // Card Preview Functionality
+      const cardVariantRadios = document.querySelectorAll(
+        'input[name="card-variant"]'
+      );
+      const previewContainer = document.getElementById("card-preview");
+      const previewImage = document.getElementById("preview-image");
+      const designOptions = document.querySelectorAll(".design-option");
+
+      // Prevent page scroll when clicking on card options
+      let savedScrollPosition = null;
+
+      designOptions.forEach((option) => {
+        option.addEventListener("mousedown", function (e) {
+          // Save scroll position before any scroll happens
+          savedScrollPosition = window.scrollY || window.pageYOffset;
+        });
+
+        option.addEventListener(
+          "click",
+          function (e) {
+            // Prevent any scrolling by restoring position immediately
+            if (savedScrollPosition !== null) {
+              // Use requestAnimationFrame to ensure it happens after browser's scroll
+              requestAnimationFrame(() => {
+                window.scrollTo(0, savedScrollPosition);
+                requestAnimationFrame(() => {
+                  window.scrollTo(0, savedScrollPosition);
+                });
+              });
+            }
+          },
+          true
+        );
+      });
+
+      // Also prevent scroll on focus events
+      cardVariantRadios.forEach((radio) => {
+        radio.addEventListener("focus", function (e) {
+          if (savedScrollPosition !== null) {
+            e.preventDefault();
+            window.scrollTo(0, savedScrollPosition);
+          }
+        });
+      });
+
+      cardVariantRadios.forEach((radio) => {
+        radio.addEventListener("change", function () {
+          if (this.checked) {
+            const previewSrc = this.getAttribute("data-preview");
+            previewImage.src = previewSrc;
+            previewContainer.classList.add("active");
+          }
+        });
+      });
+
+      // Form Submission
+      document
+        .getElementById("request-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const email = formData.get("email");
+          const cardVariant = formData.get("card-variant");
+          const quantity = formData.get("quantity");
+          const heading = formData.get("heading");
+          const message = formData.get("message");
+
+          // Get variant name for display
+          const variantNames = {
+            "christmas-1": "Christmas • 1 Logo",
+            "christmas-2": "Christmas • 2 Logos",
+            "blanko-1": "Neutral • 1 Logo",
+            "blanko-2": "Neutral • 2 Logos",
+          };
+          const variantName = variantNames[cardVariant] || cardVariant;
+
+          // Format card variant name for email
+          formData.set("card-variant", variantName);
+
+          // Set the _next parameter to current page to prevent redirect
+          const currentUrl = window.location.href.split("#")[0];
+          formData.set("_next", currentUrl + "#bestellen");
+
+          // Disable submit button
+          const submitButton = document.getElementById("submit-button");
+          submitButton.disabled = true;
+          submitButton.textContent = "Sending...";
+
+          // Submit form to FormSubmit
+          fetch("https://formsubmit.co/ajax/75996bb89baec89e0444f5036d97d134", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Show success message
+              submitButton.textContent = "✓ Order successfully sent!";
+              submitButton.style.background = "var(--sage)";
+
+              // Create success message
+              const successMessage = document.createElement("div");
+              successMessage.style.cssText = `
+                background: var(--light-green);
+                border: 2px solid var(--sage);
+                border-radius: 12px;
+                padding: 30px;
+                margin-top: 30px;
+                text-align: center;
+                box-shadow: 0 4px 16px var(--shadow-soft);
+              `;
+              successMessage.innerHTML = `
+                <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 15px; font-weight: 600;">
+                  ✓ Order successfully submitted!
+                </h3>
+                <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.6;">
+                  Thank you for your order! We have received your inquiry and will contact you within 24 hours.
+                </p>
+              `;
+
+              // Insert success message after form
+              const form = document.getElementById("request-form");
+              form.parentNode.insertBefore(successMessage, form.nextSibling);
+
+              // Reset form
+              form.reset();
+              previewContainer.classList.remove("active");
+
+              // Scroll to success message
+              setTimeout(() => {
+                successMessage.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }, 100);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              submitButton.disabled = false;
+              submitButton.textContent = "Submit Order";
+              alert(
+                "There was an error sending your order. Please try again or contact us directly by email."
+              );
+            });
+        });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href !== "#") {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
