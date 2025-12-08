@@ -1004,6 +1004,60 @@
                 <div class="design-option-label">Christmas • 2 Logos</div>
               </div>
             </label>
+            <label class="design-option">
+              <input
+                type="radio"
+                name="card-variant"
+                value="custom"
+                required
+                tabindex="-1"
+                data-preview=""
+              />
+              <div class="design-option-content">
+                <div
+                  style="
+                    width: 100%;
+                    height: 180px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: linear-gradient(
+                      135deg,
+                      var(--light-green),
+                      var(--sage)
+                    );
+                    border-radius: 8px;
+                    border: 1px solid var(--sand);
+                    padding: 8px;
+                    flex-direction: column;
+                    gap: 12px;
+                  "
+                >
+                  <div style="font-size: 3.5rem">✨</div>
+                  <div
+                    style="
+                      font-size: 1rem;
+                      color: var(--text-dark);
+                      text-align: center;
+                      font-weight: 600;
+                    "
+                  >
+                    Custom Design
+                  </div>
+                  <div
+                    style="
+                      font-size: 0.85rem;
+                      color: var(--text-medium);
+                      text-align: center;
+                      padding: 0 10px;
+                    "
+                  >
+                    Your individual design
+                  </div>
+                </div>
+                <div class="design-option-label">Custom • Your Design</div>
+              </div>
+            </label>
           </div>
           <!-- Vorschau -->
           <div class="card-preview-container" id="card-preview">
@@ -1250,7 +1304,48 @@
         radio.addEventListener("change", function () {
           if (this.checked) {
             const previewSrc = this.getAttribute("data-preview");
-            previewImage.src = previewSrc;
+            const variantValue = this.value;
+
+            if (variantValue === "custom") {
+              // Show custom message instead of image
+              previewImage.style.display = "none";
+              let customMessage = previewContainer.querySelector(
+                ".custom-preview-message"
+              );
+              if (!customMessage) {
+                customMessage = document.createElement("div");
+                customMessage.className = "custom-preview-message";
+                customMessage.style.cssText = `
+                  max-width: 400px;
+                  width: 100%;
+                  margin: 0 auto;
+                  padding: 40px 30px;
+                  background: linear-gradient(135deg, var(--light-green), var(--sage));
+                  border-radius: 12px;
+                  box-shadow: 0 8px 24px var(--shadow-soft);
+                  text-align: center;
+                `;
+                customMessage.innerHTML = `
+                  <div style="font-size: 4rem; margin-bottom: 20px;">✨</div>
+                  <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 15px; font-weight: 600;">Custom Design</h3>
+                  <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.6;">
+                    You've chosen a custom design. Share your ideas in the remarks field below, and we'll create something unique for you!
+                  </p>
+                `;
+                previewContainer.insertBefore(customMessage, previewImage);
+              }
+              customMessage.style.display = "block";
+            } else {
+              // Show image for other variants
+              const customMessage = previewContainer.querySelector(
+                ".custom-preview-message"
+              );
+              if (customMessage) {
+                customMessage.style.display = "none";
+              }
+              previewImage.style.display = "block";
+              previewImage.src = previewSrc;
+            }
             previewContainer.classList.add("active");
           }
         });
@@ -1275,6 +1370,7 @@
             "christmas-2": "Christmas • 2 Logos",
             "blanko-1": "Neutral • 1 Logo",
             "blanko-2": "Neutral • 2 Logos",
+            custom: "Custom • Your Design",
           };
           const variantName = variantNames[cardVariant] || cardVariant;
 
