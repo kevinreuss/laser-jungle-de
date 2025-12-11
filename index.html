@@ -865,9 +865,11 @@
         <h1>Premium Laser-Cut Cards for Companies</h1>
 
         <p class="subtitle" style="font-weight: 600">
-          Handcrafted in Germany · Fully Personalized · Fast EU Shipping
+          Handcrafted in Germany 🇩🇪 <br />
+          Fully Personalized <br />
+          Fast Delivery in Germany - EU Shipping Available 🇪🇺
         </p>
-        <a href="#bestellen" class="cta-button">Order now</a>
+        <a href="#bestellen" class="cta-button">Request Quote Now</a>
       </div>
     </section>
 
@@ -906,7 +908,7 @@
 
     <!-- Request/Configurator Section -->
     <section id="bestellen" class="request-section">
-      <h2 class="section-title">Order now</h2>
+      <h2 class="section-title">Request Quote Now</h2>
       <p class="pricing-subtitle" style="margin-bottom: 40px">
         Choose your card variant – we'll take care of the rest
       </p>
@@ -919,7 +921,7 @@
         <input
           type="hidden"
           name="_subject"
-          value="New Order from Laser Jungle Website"
+          value="New Quote Request from Laser Jungle Website"
         />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="" />
@@ -1142,8 +1144,8 @@
               margin-top: 8px;
             "
           >
-            Note: We will send you an email after your order with instructions
-            on how to submit your logos to us.
+            Note: We will send you an email after your quote request with
+            instructions on how to submit your logos to us.
           </p>
         </div>
 
@@ -1181,7 +1183,7 @@
         </div>
 
         <button type="submit" class="submit-button" id="submit-button">
-          Submit Order
+          Request Quote
         </button>
       </form>
 
@@ -1402,7 +1404,7 @@
             .then((response) => response.json())
             .then((data) => {
               // Show success message
-              submitButton.textContent = "✓ Order successfully sent!";
+              submitButton.textContent = "✓ Quote Request successfully sent!";
               submitButton.style.background = "var(--sage)";
 
               // Create success message
@@ -1418,10 +1420,10 @@
               `;
               successMessage.innerHTML = `
                 <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 15px; font-weight: 600;">
-                  ✓ Order successfully submitted!
+                  ✓ Quote Request successfully submitted!
                 </h3>
                 <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.6;">
-                  Thank you for your order! We have received your inquiry and will contact you within 24 hours.
+                  Thank you for your quote request! We have received your inquiry and will contact you within 24 hours.
                 </p>
               `;
 
@@ -1444,9 +1446,9 @@
             .catch((error) => {
               console.error("Error:", error);
               submitButton.disabled = false;
-              submitButton.textContent = "Submit Order";
+              submitButton.textContent = "Request Quote";
               alert(
-                "There was an error sending your order. Please try again or contact us directly by email."
+                "There was an error sending your quote request. Please try again or contact us directly by email."
               );
             });
         });
